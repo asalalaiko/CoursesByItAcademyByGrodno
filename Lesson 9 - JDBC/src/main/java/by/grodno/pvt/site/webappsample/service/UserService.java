@@ -32,11 +32,11 @@ public class UserService {
 	public List<User> getUsers() {
 		List<User> result = new ArrayList<User>();
 		try (Connection conn = DBUtils.getConnetion(); Statement stmt = conn.createStatement()) {
-			ResultSet rs = stmt.executeQuery(SQL.SELECT_ALL);
+			ResultSet rs = stmt.executeQuery(SQL.SELECT_ALL_AND_DEP);
 
 			while (rs.next()) {
 
-				User user = mapRawToUser(rs);
+				User user = mapRawToUsers(rs);
 
 				result.add(user);
 			}
@@ -52,14 +52,30 @@ public class UserService {
 	private User mapRawToUser(ResultSet rs) throws SQLException {
 		Integer id = rs.getInt(1);
 		String fName = rs.getString(2);
-		String lName = rs.getString(5);
-		Integer dept = rs.getInt(3) == 0 ? null : rs.getInt(3);
-		Double sal = rs.getDouble(7);
-		Date date = rs.getTimestamp(4);
-		Boolean male = rs.getBoolean(6);
+		String lName = rs.getString(4);
+		Integer deptId = rs.getInt(7) == 0 ? null : rs.getInt(7);
+		Double sal = rs.getDouble(6);
+		Date date = rs.getTimestamp(3);
+		Boolean male = rs.getBoolean(5);
+		User user = new User(id, fName, lName, date, male);
+		user.setSalary(sal);
+		user.setDepartmentId(deptId);
+		return user;
+	};
+
+	private User mapRawToUsers(ResultSet rs) throws SQLException {
+		Integer id = rs.getInt(1);
+		String fName = rs.getString(2);
+		String lName = rs.getString(4);
+		String dept = rs.getString(9) ;
+		Integer deptId = rs.getInt(7) == 0 ? null : rs.getInt(7);
+		Double sal = rs.getDouble(6);
+		Date date = rs.getTimestamp(3);
+		Boolean male = rs.getBoolean(5);
 		User user = new User(id, fName, lName, date, male);
 		user.setSalary(sal);
 		user.setDepartment(dept);
+		user.setDepartmentId(deptId);
 		return user;
 	};
 
@@ -129,6 +145,7 @@ public class UserService {
 		try (Connection conn = DBUtils.getConnetion();
 			 PreparedStatement stmt = conn.prepareStatement(SQL.UPDATE)) {
 
+			LOGGER.info("User update with id: " + user.getId());
 
 			stmt.setString(1, user.getFirstName());
 			stmt.setString(2, user.getLastName());

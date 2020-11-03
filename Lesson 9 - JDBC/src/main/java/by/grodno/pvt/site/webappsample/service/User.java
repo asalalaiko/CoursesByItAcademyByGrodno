@@ -9,8 +9,8 @@ public class User {
 	private String lastName;
 	private Date birthdate;
 	private boolean male;
-
-	private Integer department;
+	private Integer departmentId;
+	private String department;
 	private Double salary;
 
 	public User(Integer id, String firstMame, String lastName, Date birthdate, boolean male) {
@@ -20,6 +20,7 @@ public class User {
 		this.lastName = lastName;
 		this.birthdate = birthdate;
 		this.male = male;
+
 	}
 
 	public Integer getId() {
@@ -62,11 +63,19 @@ public class User {
 		this.male = male;
 	}
 
-	public Integer getDepartment() {
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer department) {
+		this.departmentId = departmentId;
+	}
+
+	public String getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(Integer department) {
+	public void setDepartment(String department) {
 		this.department = department;
 	}
 

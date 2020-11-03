@@ -11,22 +11,22 @@
       <a href="http://localhost:8080/webappsample/jstl1" class="badge badge-danger"> << Back  </a>
 
       <form action = "user" method = "POST">
-         <div class="form-row">
+         <div class="form-row col-md-6">
             <div class="form-group col-md-6">
                <label for="inputfirstname">First Name:</label>
-               <input type = "text" class="form-control" id="inputfirstname" placeholder="Ivanov" name = "firstName">
+               <input type = "text" class="form-control" id="inputfirstname" placeholder="Ivan" name = "firstName">
                </div>
             <div class="form-group col-md-6">
                <label for="inputlastname">Last Name:</label>
-               <input type = "text" class="form-control" id="inputlastname" placeholder="Ivan"name = "lastName" >
+               <input type = "text" class="form-control" id="inputlastname" placeholder="Ivanov"name = "lastName" >
                </div>
             </div>
-         <div class="form-group">
+         <div class="form-group col-md-6">
             <label for="inputBirthDate">Birthdate</label>
             <input type="text" class="form-control" id="inputBirthDate" placeholder="YYYY-MM-DD" name = "birthdate">
          </div>
 
-         <fieldset class="form-group">
+         <fieldset class="form-group col-md-6">
             <div class="row">
                <legend class="col-form-label col-sm-2 pt-0">Sex:</legend>
                <div class="col-sm-10">
@@ -45,10 +45,11 @@
                </div>
             </div>
          </fieldset>
-         <div class="form-group">
+         <div class="form-group col-md-6">
             <label for="inputSalary">Salary: </label>
             <input type="text" class="form-control" id="inputSalary" placeholder="0 .. 10000" name = "salary">
          </div>
+         <div class="form-group col-md-6">
          <input type = "submit" value = "Submit" />
          </div>
          </div>

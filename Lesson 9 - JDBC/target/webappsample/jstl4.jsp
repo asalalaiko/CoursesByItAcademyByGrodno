@@ -45,16 +45,14 @@
             <div class="col-sm-10">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="male" id="male"
-                    <c:if
-
-                     test="${requestScope.currUser.male}"> checked </c:if>>
+                    <c:if test="${requestScope.currUser.male}"> checked value="true" </c:if> value="true"
                     <label class="form-check-label" for="male">
                          Male
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="male" id="female"
-                    <c:if test="${requestScope.currUser.male == false}"> checked </c:if>>
+                    <c:if test="${requestScope.currUser.male == false}"> checked value="false"</c:if>
                     <label class="form-check-label" for="female" >
                         Female
                     </label>
@@ -66,6 +64,9 @@
         <label for="inputSalary">Salary: </label>
         <input type="text" class="form-control" id="inputSalary" value="${requestScope.currUser.salary}" name = "salary">
     </div>
+    <input type="hidden" name="id" value="${requestScope.currUser.id}">
+
+
     <input type = "submit" value = "Submit" />
 
 </form>
