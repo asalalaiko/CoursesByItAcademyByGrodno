@@ -61,6 +61,10 @@
 		<servlet-name>Jstl4</servlet-name>
 		<servlet-class>by.grodno.pvt.site.webappsample.JstlServlet4</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Jstl41</servlet-name>
+		<servlet-class>by.grodno.pvt.site.webappsample.JstlServlet41</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
@@ -97,6 +101,14 @@
 	<servlet-mapping>
 		<servlet-name>Jstl4</servlet-name>
 		<url-pattern>/user/user</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Jstl41</servlet-name>
+		<url-pattern>/dep/edit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Jstl41</servlet-name>
+		<url-pattern>/dep/dep</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>HomeServlet</servlet-name>

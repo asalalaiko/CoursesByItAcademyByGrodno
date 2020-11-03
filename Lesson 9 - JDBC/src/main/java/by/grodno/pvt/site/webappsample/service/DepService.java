@@ -88,4 +88,50 @@ public class DepService {
 		}
 
 	};
+
+	public List<Dep> getDepbyId(Integer Id) {
+		List<Dep> result = new ArrayList<Dep>();
+		try (Connection conn = DBUtils.getConnetion();
+			 PreparedStatement stmt = conn.prepareStatement(SQL.SELECT_DEP_BY_ID)) {
+
+			stmt.setInt(1, Id);
+
+			ResultSet rs = stmt.executeQuery();
+
+
+			if (rs.next()) {
+
+				Dep dep = mapRawToDeps(rs);
+
+				result.add(dep);
+			}
+
+			rs.close();
+
+		} catch (Exception e) {
+			LOGGER.error("Something went wrong...", e);
+		}
+		return result;
+	}
+	public void editDep(Dep dep) {
+		try (Connection conn = DBUtils.getConnetion();
+			 PreparedStatement stmt = conn.prepareStatement(SQL.UPDATE_DEP)) {
+
+			LOGGER.info("Dep update with id: " + dep.getId());
+
+			stmt.setString(1, dep.getDepName());
+			stmt.setString(2, dep.getDepInf());
+			stmt.setInt(3, dep.getId());
+
+
+			stmt.executeUpdate();
+
+
+			LOGGER.info("dep update with id: " + dep.getId());
+
+		} catch (Exception e) {
+			LOGGER.error("Something went wrong...", e);
+		}
+	}
+
 }
