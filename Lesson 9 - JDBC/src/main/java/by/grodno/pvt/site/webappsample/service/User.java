@@ -20,8 +20,20 @@ public class User {
 		this.lastName = lastName;
 		this.birthdate = birthdate;
 		this.male = male;
-
 	}
+
+	public User(Integer id, String firstName, String lastName, Date birthdate, boolean male, Double salary, Integer department) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.departmentId = department;
+		this.birthdate = birthdate;
+		this.male = male;
+		this.salary = salary;
+	}
+
+
+
 
 	public Integer getId() {
 		return id;

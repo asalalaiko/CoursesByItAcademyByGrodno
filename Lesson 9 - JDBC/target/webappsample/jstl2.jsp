@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="by.grodno.pvt.site.webappsample.service.Dep"%>
+
 <html>
 <link rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -6,6 +7,8 @@
       crossorigin="anonymous">
 
    <body>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+   <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
       <%@ include file="fragments/header.jsp"%>
 
       <a href="http://localhost:8080/webappsample/jstl1" class="badge badge-danger"> << Back  </a>
@@ -48,6 +51,18 @@
          <div class="form-group col-md-6">
             <label for="inputSalary">Salary: </label>
             <input type="text" class="form-control" id="inputSalary" placeholder="0 .. 10000" name = "salary">
+         </div>
+            <div class="form-group col-md-6">
+            <select class="custom-select" name="department">
+               <option selected>Select departament</option>
+            <c:if test="${requestScope.deps != null}">
+               <c:forEach var="i" begin="1" end="${fn:length(requestScope.deps)}">
+                  <c:set var="currDep" scope="request"
+                         value="${requestScope.deps[i-1]}"/>
+                  <option value="${requestScope.currDep.id}">${requestScope.currDep.depName}</option>
+               </c:forEach>
+            </c:if>
+            </select>
          </div>
          <div class="form-group col-md-6">
          <input type = "submit" value = "Submit" />

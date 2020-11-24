@@ -13,7 +13,7 @@
 <%@ include file="fragments/header.jsp"%>
 
 
-<a href="http://localhost:8080/webappsample/jstl1" class="badge badge-danger"> << Back  </a>
+<a href="http://localhost:8080/webappsample/jstl11" class="badge badge-danger"> << Back  </a>
 <c:if test="${requestScope.deps != null}">
     <c:set var="currDep" scope="request"
            value="${requestScope.deps[0]}" />

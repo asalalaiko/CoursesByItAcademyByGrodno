@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="male" id="female"
-                    <c:if test="${requestScope.currUser.male == false}"> checked value="false"</c:if>
+                    <c:if test="${requestScope.currUser.male == false}"> checked value="false"></c:if>
                     <label class="form-check-label" for="female" >
                         Female
                     </label>
@@ -64,7 +64,13 @@
         <label for="inputSalary">Salary: </label>
         <input type="text" class="form-control" id="inputSalary" value="${requestScope.currUser.salary}" name = "salary">
     </div>
-    <input type="hidden" name="id" value="${requestScope.currUser.id}">
+
+    <div class="form-group">
+        ${requestScope.currUser.department}
+
+    </div>
+
+    <input type="hidden" name="id" value="${requestScope.currUser}">
 
 
     <input type = "submit" value = "Submit" />

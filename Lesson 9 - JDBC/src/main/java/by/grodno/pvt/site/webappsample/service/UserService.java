@@ -103,6 +103,8 @@ public class UserService {
 			stmt.setTimestamp(4,
 					Timestamp.valueOf(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS").format(user.getBirthdate())));
 			stmt.setBoolean(5, user.isMale());
+			stmt.setInt(6, user.getDepartmentId());
+
 
 			stmt.executeUpdate();
 
@@ -128,7 +130,7 @@ public class UserService {
 
 			if (rs.next()) {
 
-				User user = mapRawToUser(rs);
+				User user = mapRawToUser(rs);//**********************
 
 				result.add(user);
 			}

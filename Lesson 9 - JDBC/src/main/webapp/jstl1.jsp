@@ -65,7 +65,7 @@
 	</c:if>
 
 	<a class="btn btn-primary"
-		href="http://localhost:8080/webappsample/jstl2.jsp">Add user</a>
+		href="http://localhost:8080/webappsample/jstl2">Add user</a>
 
 	<br />
 	<br />
