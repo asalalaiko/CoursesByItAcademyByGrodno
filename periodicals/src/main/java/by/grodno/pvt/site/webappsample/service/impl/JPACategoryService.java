@@ -4,7 +4,6 @@ import by.grodno.pvt.site.webappsample.domain.Category;
 import by.grodno.pvt.site.webappsample.repo.CategoryRepo;
 import by.grodno.pvt.site.webappsample.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +16,7 @@ public  class JPACategoryService implements CategoryService {
     private CategoryRepo repo;
 
     @Override
-    public List<Category> getCategoryes() {
+    public List<Category> getCategories() {
         return null;
     }
 
@@ -42,17 +41,9 @@ public  class JPACategoryService implements CategoryService {
     }
 
     @Override
-    public List<Category> findByExample(Category categorySample) {
+    public List<Category> findByName(String name) {
         return null;
     }
 
-    @Override
-    public Page<Category> getPage(Integer pageNum, Integer pageSize) {
-        return null;
-    }
 
-    @Override
-    public List<Category> findByFName(String fname) {
-        return null;
-    }
 }

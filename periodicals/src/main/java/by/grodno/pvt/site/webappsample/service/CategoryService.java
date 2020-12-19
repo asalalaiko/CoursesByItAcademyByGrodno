@@ -1,13 +1,13 @@
 package by.grodno.pvt.site.webappsample.service;
 
 import by.grodno.pvt.site.webappsample.domain.Category;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 public interface CategoryService {
 
-    List<Category> getCategoryes();
+
+    List<Category> getCategories();
 
     Category getCategory(Integer id);
 
@@ -17,9 +17,6 @@ public interface CategoryService {
 
     void deleteCategory(Integer number);
 
-    List<Category> findByExample(Category categorySample);
+    List<Category> findByName(String name);
 
-    Page<Category> getPage(Integer pageNum, Integer pageSize);
-
-    List<Category> findByFName(String fname);
 }
