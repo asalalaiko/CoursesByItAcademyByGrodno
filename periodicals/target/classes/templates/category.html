@@ -10,11 +10,18 @@
 <body>
 <header th:insert="blocks/header::header"></headerth:insert></header>
 
+
+    <form th:action="@{/}" method="post">
+        <input type="text" name="name" placeholder="Введите категорию" />
+        <button type="submit">Добавить</button>
+    </form>
+
 <table class="table">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Id</th>
         <th scope="col">Name Category</th>
+        <th scope="col">Action</th>
     </tr>
     </thead>
 
@@ -22,7 +29,8 @@
 
         <td th:text="${category.id}" />
         <td th:text="${category.name}" />
-
+        <td><a class="btn btn-danger"
+            th:href="@{'/admin/category/del/'+${category.id}}">Delete</a> </td>
 
     </tr>
 </table>
