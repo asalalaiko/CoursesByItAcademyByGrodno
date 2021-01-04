@@ -17,28 +17,26 @@ public  class JPACategoryService implements CategoryService {
 
     @Override
     public List<Category> getCategories() {
-        return null;
+        return repo.findAll();
     }
 
     @Override
     public Category getCategory(Integer id) {
-        return null;
+        return repo.getOne(id);
     }
 
     @Override
-    public void addCategory(List<Category> categories) {
-        repo.saveAll(categories);
+    public void addCategory(List<Category> category) {
+        repo.saveAll(category);
     }
 
     @Override
     public void saveCategory(Category category) {
-
+        repo.save(category);
     }
 
     @Override
-    public void deleteCategory(Integer number) {
-
-    }
+    public void deleteCategory(Integer id) { repo.deleteById(id);    }
 
     @Override
     public List<Category> findByName(String name) {

@@ -1,5 +1,6 @@
 package by.grodno.pvt.site.webappsample.domain;
 
+import by.grodno.pvt.site.webappsample.repo.CategoryRepo;
 import lombok.Data;
 
 import javax.persistence.*;

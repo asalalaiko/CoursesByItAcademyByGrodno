@@ -24,4 +24,8 @@ public class Relese {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    public Relese(Integer id) {
+        this.id = id;
+    }
 }
