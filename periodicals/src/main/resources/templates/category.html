@@ -11,9 +11,20 @@
 <header th:insert="blocks/header::header"></headerth:insert></header>
 
 
+<div th:if="${#httpServletRequest.requestURI == '/category/edit'}">
+    <form th:action="@{/category/edit}" method="post">
+        [[${category.id}]]
+        <input type="hidden" name="id" th:value="${category.id}" />
+        <input type="text" th:value="${category.name}"  name="name" />
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+
+<div th:if="${#httpServletRequest.requestURI == '/category'}">
     <form th:action="@{/category}" method="post">
         <input type="text" name="name" placeholder="Введите категорию" />
-        <button type="submit">Добавить</button>
+        <button type="submit">Add</button>
     </form>
 
 <table class="table">
@@ -37,5 +48,6 @@
 
     </tr>
 </table>
+</div>
 </body>
 </html>

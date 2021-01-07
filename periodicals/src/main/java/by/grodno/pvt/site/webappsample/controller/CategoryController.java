@@ -48,22 +48,28 @@ public class CategoryController {
 
     @GetMapping("/category/delete")
     public String deleteCategory(@RequestParam(value="id") Integer id){
+
         categoryRepo.deleteById(id);
         return "redirect:/category";
     }
 
 
     @GetMapping("/category/edit")
-    public String getCategory(@PathVariable(value="id") Integer id, Model model){
-        List<CategoryDTO> category = categoryService.getCategory(id).stream().map(u -> conversionService.convert(u, CategoryDTO.class))
-                .collect(Collectors.toList());
-
+    public String getCategory(@RequestParam(value="id") Integer id, Model model){
+        Category category = categoryRepo.getOne(id);
         model.addAttribute("category", category);
-        return "redirect:/category/edit";
+
+        return "category";
+
     }
 
-
-
+    @PostMapping("/category/edit")
+    public String editCategory(@RequestParam (value="id") Integer id, @RequestParam String name) {
+        Category category = categoryRepo.getOne(id);
+        category.setName(name);
+        categoryService.saveCategory(category);
+        return "redirect:/category";
+    }
 
 
 
