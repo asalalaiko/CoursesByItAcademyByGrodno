@@ -23,4 +23,43 @@ public class Publisher {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "publisher")
     private List<Product> products;
 
+public Publisher(){
+
+}
+
+public Publisher(String name){
+    this.name=name;
+}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }

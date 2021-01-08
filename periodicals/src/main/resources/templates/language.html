@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></headerth:insert></header>
+
+
+<div th:if="${#httpServletRequest.requestURI == '/language/edit'}">
+    <form th:action="@{/language/edit}" method="post">
+        [[${language.id}]]
+        <input type="hidden" name="id" th:value="${language.id}" />
+        <input type="text" th:value="${language.name}"  name="name" />
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+
+
+<div th:if="${#httpServletRequest.requestURI == '/language'}">
+    <form th:action="@{/language}" method="post">
+        <input type="text" name="name" placeholder="Введите язык" />
+        <button type="submit">Add</button>
+    </form>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name Language</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+
+        <tr th:each="language : ${language}">
+
+            <td th:text="${language.id}" />
+            <td th:text="${language.name}" />
+            <td>
+                <a class="btn btn-danger"
+                   th:href="@{'/language/delete?id='+${language.id}}">Delete</a>
+                <a class="btn btn-danger"
+                   th:href="@{'/language/edit?id='+${language.id}}">Edit</a> </td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>
