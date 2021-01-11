@@ -53,9 +53,10 @@ public class PublisherController {
     }
 
     @PostMapping("/publisher/edit")
-    public String editPublisher(@RequestParam (value="id") Integer id, @RequestParam String name) {
+    public String editPublisher(@RequestParam (value="id") Integer id, @RequestParam String name, @RequestParam String contact) {
         Publisher publisher = publisherRepo.getOne(id);
         publisher.setName(name);
+        publisher.setContact(contact);
         publisherService.savePublisher(publisher);
         return "redirect:/publisher";
     }

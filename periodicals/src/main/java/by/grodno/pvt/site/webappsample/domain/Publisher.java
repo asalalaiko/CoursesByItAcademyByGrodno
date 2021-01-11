@@ -23,11 +23,9 @@ public class Publisher {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "publisher")
     private List<Product> products;
 
-public Publisher(){
+    public Publisher(){}
 
-}
-
-public Publisher(String name, String contact){
+    public Publisher(String name, String contact){
     this.name=name;
     this.contact=contact;
 }

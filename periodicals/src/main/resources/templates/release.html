@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></headerth:insert></header>
+
+
+<div th:if="${#httpServletRequest.requestURI == '/release/edit'}">
+    <form th:action="@{/release/edit}" method="post">
+        [[${release.id}]]
+        <input type="hidden" name="id" th:value="${release.id}" />
+        <input type="text" th:value="${release.name}"  name="name" />
+        <textarea rows="10" cols="45"  name="description">[[${release.description}]]</textarea>
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+
+
+<div th:if="${#httpServletRequest.requestURI == '/release'}">
+    <form th:action="@{/release}" method="post">
+        <input type="text" name="name" placeholder="Release" />
+        <textarea rows="5" cols="120"  name="description"></textarea>
+        <button type="submit">Add</button>
+    </form>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name Release</th>
+            <th scope="col">Description Release</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+
+        <tr th:each="release : ${release}">
+
+            <td th:text="${release.id}" />
+            <td th:text="${release.name}" />
+            <td>[[${release.description}]]</td>
+            <td>
+                <a class="btn btn-danger"
+                   th:href="@{'/release/delete?id='+${release.id}}">Delete</a>
+                <a class="btn btn-danger"
+                   th:href="@{'/release/edit?id='+${release.id}}">Edit</a> </td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

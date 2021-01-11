@@ -35,4 +35,54 @@ public class Product {
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
+    public Product() {}
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIsin() {
+        return isin;
+    }
+
+    public void setIsin(String isin) {
+        this.isin = isin;
+    }
+
+    public Date getDate_first_available() {
+        return date_first_available;
+    }
+
+    public void setDate_first_available(Date date_first_available) {
+        this.date_first_available = date_first_available;
+    }
+
+    public List<Release> getReleases() {
+        return releases;
+    }
+
+    public void setReleases(List<Release> releases) {
+        this.releases = releases;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 }
