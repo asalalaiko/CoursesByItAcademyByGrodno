@@ -54,7 +54,7 @@ public class LanguageController {
     }
 
     @PostMapping("/language/edit")
-    public String editLanguagey(@RequestParam (value="id") Integer id, @RequestParam String name) {
+    public String editlanguagey(@RequestParam (value="id") Integer id, @RequestParam String name) {
         Language language = languageRepo.getOne(id);
         language.setName(name);
         languageService.saveLanguage(language);
