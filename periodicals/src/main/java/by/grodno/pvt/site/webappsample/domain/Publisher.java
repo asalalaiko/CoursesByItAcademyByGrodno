@@ -27,8 +27,9 @@ public Publisher(){
 
 }
 
-public Publisher(String name){
+public Publisher(String name, String contact){
     this.name=name;
+    this.contact=contact;
 }
 
     public Integer getId() {
