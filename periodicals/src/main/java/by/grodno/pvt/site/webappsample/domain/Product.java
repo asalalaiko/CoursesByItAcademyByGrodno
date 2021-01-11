@@ -29,7 +29,7 @@ public class Product {
     private Date date_first_available;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    private List<Relese> relese;
+    private List<Release> releases;
 
     @ManyToOne
     @JoinColumn(name = "publisher_id")

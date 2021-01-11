@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></headerth:insert></header>
+
+
+<div th:if="${#httpServletRequest.requestURI == '/product/edit'}">
+    <form th:action="@{/product/edit}" method="post">
+        [[${product.id}]]
+        <input type="hidden" name="id" th:value="${product.id}" />
+        <input type="text" th:value="${product.name}"  name="name" />
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+
+
+<div th:if="${#httpServletRequest.requestURI == '/product'}">
+    <form th:action="@{/product}" method="post">
+        <input type="text" name="name" placeholder="Введите язык" />
+        <button type="submit">Add</button>
+    </form>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name Product</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+
+        <tr th:each="product : ${product}">
+
+            <td th:text="${product.id}" />
+            <td th:text="${product.name}" />
+            <td>
+                <a class="btn btn-danger"
+                   th:href="@{'/product/delete?id='+${product.id}}">Delete</a>
+                <a class="btn btn-danger"
+                   th:href="@{'/product/edit?id='+${product.id}}">Edit</a> </td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

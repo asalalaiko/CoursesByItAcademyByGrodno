@@ -11,9 +11,20 @@
 <header th:insert="blocks/header::header"></headerth:insert></header>
 
 
-    <form th:action="@{/}" method="post">
+<div th:if="${#httpServletRequest.requestURI == '/category/edit'}">
+    <form th:action="@{/category/edit}" method="post">
+        [[${category.id}]]
+        <input type="hidden" name="id" th:value="${category.id}" />
+        <input type="text" th:value="${category.name}"  name="name" />
+        <button type="submit">Edit</button>
+    </form>
+</div>
+
+
+<div th:if="${#httpServletRequest.requestURI == '/category'}">
+    <form th:action="@{/category}" method="post">
         <input type="text" name="name" placeholder="Введите категорию" />
-        <button type="submit">Добавить</button>
+        <button type="submit">Add</button>
     </form>
 
 <table class="table">
@@ -29,10 +40,14 @@
 
         <td th:text="${category.id}" />
         <td th:text="${category.name}" />
-        <td><a class="btn btn-danger"
-            th:href="@{'/admin/category/del/'+${category.id}}">Delete</a> </td>
+        <td>
+            <a class="btn btn-danger"
+            th:href="@{'/category/delete?id='+${category.id}}">Delete</a>
+            <a class="btn btn-danger"
+               th:href="@{'/category/edit?id='+${category.id}}">Edit</a> </td>
 
     </tr>
 </table>
+</div>
 </body>
 </html>
