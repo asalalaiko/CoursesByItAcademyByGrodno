@@ -4,12 +4,9 @@
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/PublisherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/PublisherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Publisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Publisher.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +54,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.grodno.pvt.site.webappsample.controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
       <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
@@ -108,6 +108,9 @@
       <workItem from="1610363475872" duration="3236000" />
       <workItem from="1610393386297" duration="3996000" />
       <workItem from="1610399232626" duration="1268000" />
+      <workItem from="1610480055403" duration="8333000" />
+      <workItem from="1610488788058" duration="7385000" />
+      <workItem from="1610738786696" duration="12067000" />
     </task>
     <servers />
   </component>

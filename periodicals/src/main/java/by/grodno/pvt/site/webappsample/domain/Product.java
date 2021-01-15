@@ -4,6 +4,7 @@ package by.grodno.pvt.site.webappsample.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -37,6 +38,12 @@ public class Product {
 
     public Product() {}
 
+    public Product(String name, String isin, Date date_first_available, Publisher publisher) {
+        this.name = name;
+        this.isin = isin;
+        this.date_first_available = date_first_available;
+        this.publisher = publisher;
+    }
 
     public Integer getId() {
         return id;

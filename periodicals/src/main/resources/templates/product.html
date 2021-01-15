@@ -1,5 +1,7 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="${title}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,12 +12,15 @@
 <body>
 <header th:insert="blocks/header::header"></headerth:insert></header>
 
-
 <div th:if="${#httpServletRequest.requestURI == '/product/edit'}">
     <form th:action="@{/product/edit}" method="post">
         [[${product.id}]]
         <input type="hidden" name="id" th:value="${product.id}" />
         <input type="text" th:value="${product.name}"  name="name" />
+        <input type="text" th:value="${product.isin}"  name="isin" />
+        <input type="date" th:value="${product.date_first_available}"  name="date_first_available" />
+
+       x
         <button type="submit">Edit</button>
     </form>
 </div>
@@ -24,16 +29,29 @@
 
 <div th:if="${#httpServletRequest.requestURI == '/product'}">
     <form th:action="@{/product}" method="post">
-        <input type="text" name="name" placeholder="Введите язык" />
+        <input type="text" name="name" placeholder="Product name" />
+        <input type="text" name="isin" placeholder="Product isin" />
+        <input type="date" name="date_first_available" placeholder="Product date available" />
+        <select name="publisher">
+            <option
+                    th:each="publisher : ${publisher}"
+                    th:value="${publisher.id}" th:text="${publisher.name}" >
+            </option>
+        </select>
         <button type="submit">Add</button>
     </form>
 
-    <table class="table">
+
+        <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Name Product</th>
+            <th scope="col">ISIN Product</th>
+            <th scope="col">Available date</th>
+            <th scope="col">Product publisher</th>
             <th scope="col">Action</th>
+
         </tr>
         </thead>
 
@@ -41,6 +59,10 @@
 
             <td th:text="${product.id}" />
             <td th:text="${product.name}" />
+            <td th:text="${product.isin}" />
+            <td th:text="${#dates.format(product.date_first_available, 'dd-MM-yyyy')}" />
+            <td th:text="${product.p}" />
+
             <td>
                 <a class="btn btn-danger"
                    th:href="@{'/product/delete?id='+${product.id}}">Delete</a>
@@ -52,3 +74,4 @@
 </div>
 </body>
 </html>
+
