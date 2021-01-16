@@ -15,12 +15,18 @@
 <div th:if="${#httpServletRequest.requestURI == '/product/edit'}">
     <form th:action="@{/product/edit}" method="post">
         [[${product.id}]]
-        <input type="hidden" name="id" th:value="${product.id}" />
-        <input type="text" th:value="${product.name}"  name="name" />
+        <input type="hidden" name="productId" th:value="${product.id}" />
+        <input type="text" th:value="${product.name}"  name="productName" />
         <input type="text" th:value="${product.isin}"  name="isin" />
         <input type="date" th:value="${product.date_first_available}"  name="date_first_available" />
-
-       x
+        <select name="publisher">
+            <option selected="selected" disabled>Select publisher</option>
+            <option
+                    th:each="publisher : ${publisher}"
+                    th:value="${publisher.id}" th:text="${publisher.name}"
+                    >
+            </option>
+        </select>
         <button type="submit">Edit</button>
     </form>
 </div>
@@ -68,7 +74,7 @@
                 <a class="btn btn-danger"
                    th:href="@{'/product/delete?id='+${product.id}}">Delete</a>
                 <a class="btn btn-danger"
-                   th:href="@{'/product/edit?id='+${product.id}}">Edit</a> </td>
+                   th:href="@{'/product/edit?productId='+${product.id}}">Edit</a> </td>
 
         </tr>
     </table>

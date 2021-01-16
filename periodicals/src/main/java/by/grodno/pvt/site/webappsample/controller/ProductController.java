@@ -61,14 +61,31 @@ public class ProductController {
     }
 
     @GetMapping("/product/edit")
-    public String getPublisher(@RequestParam(value="id") Integer id, Model model) {
+    public String getProduct(@RequestParam(value="productId") Integer productId, Model model) {
         model.addAttribute("publisher", publisherRepo.findAll());
-        Product product = productRepo.getOne(id);
+        Product product = productRepo.getOne(productId);
         model.addAttribute("product", product);
 
         return "product";
     }
 
+    @PostMapping("/product/edit")
+    public String editProduct(@RequestParam(value="productId") Integer productId, @RequestParam String productName, @RequestParam String isin, @RequestParam String date_first_available, Publisher publisher) throws ParseException {
+
+        Product product = productRepo.getOne(productId);
+        product.setName(productName);
+        product.setIsin(isin);
+
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        product.setDate_first_available(df.parse(date_first_available));
+
+
+        product.setPublisher(publisher);
+
+        productService.saveProduct(product);
+        return "redirect:/product";
+
+    }
 
 
 }
