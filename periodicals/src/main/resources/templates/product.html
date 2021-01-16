@@ -29,7 +29,7 @@
 
 <div th:if="${#httpServletRequest.requestURI == '/product'}">
     <form th:action="@{/product}" method="post">
-        <input type="text" name="name" placeholder="Product name" />
+        <input type="text" name="productName" placeholder="Product name" />
         <input type="text" name="isin" placeholder="Product isin" />
         <input type="date" name="date_first_available" placeholder="Product date available" />
         <select name="publisher">
@@ -61,7 +61,7 @@
             <td th:text="${product.name}" />
             <td th:text="${product.isin}" />
             <td th:text="${#dates.format(product.date_first_available, 'dd-MM-yyyy')}" />
-            <td th:text="${product.p}" />
+            <td th:text="${product.publisher.name}" />
 
             <td>
                 <a class="btn btn-danger"
