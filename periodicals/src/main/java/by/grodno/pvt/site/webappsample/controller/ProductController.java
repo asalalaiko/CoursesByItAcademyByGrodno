@@ -41,8 +41,6 @@ public class ProductController {
     }
 
 
-
-
     @PostMapping("/product")
     public String addProduct(@RequestParam String productName, @RequestParam String isin, @RequestParam String date_first_available, Publisher publisher) throws ParseException {
 
@@ -51,11 +49,26 @@ public class ProductController {
        Product product = new Product(productName, isin, df.parse(date_first_available));
        product.setPublisher(publisher);
        productService.saveProduct(product);
-
-
-
-        return "redirect:/product";
+       return "redirect:/product";
 
     }
+    @GetMapping("/product/delete")
+    public String deleteProduct(@RequestParam(value="id") Integer id){
+
+        productRepo.deleteById(id);
+
+        return "redirect:/product";
+    }
+
+    @GetMapping("/product/edit")
+    public String getPublisher(@RequestParam(value="id") Integer id, Model model) {
+        model.addAttribute("publisher", publisherRepo.findAll());
+        Product product = productRepo.getOne(id);
+        model.addAttribute("product", product);
+
+        return "product";
+    }
+
+
 
 }

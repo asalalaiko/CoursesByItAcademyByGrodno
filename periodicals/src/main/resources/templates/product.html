@@ -33,6 +33,7 @@
         <input type="text" name="isin" placeholder="Product isin" />
         <input type="date" name="date_first_available" placeholder="Product date available" />
         <select name="publisher">
+            <option selected="selected" disabled>Select publisher</option>
             <option
                     th:each="publisher : ${publisher}"
                     th:value="${publisher.id}" th:text="${publisher.name}" >
@@ -61,7 +62,7 @@
             <td th:text="${product.name}" />
             <td th:text="${product.isin}" />
             <td th:text="${#dates.format(product.date_first_available, 'dd-MM-yyyy')}" />
-            <td th:text="${product.publisher.name}" />
+            <td> <a th:href="@{'/publisher/id='+${product.publisher.id}}"th:text="${product.publisher.name}" /> </td>
 
             <td>
                 <a class="btn btn-danger"
