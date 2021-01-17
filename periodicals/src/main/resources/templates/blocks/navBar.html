@@ -17,7 +17,7 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li class="nav-item dropdown"><a
+				<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> ADMIN </a>
@@ -52,7 +52,7 @@
 			<div class="navbar-text" sec:authorize="isAuthenticated()">
 			<form class="form-inline my-2 my-lg-0"
 				th:action="@{/logout}" method="post">
-				Hello, <span sec:authentication="principal.username">Anonymous&nbsp; </span>!
+				Hello,&nbsp;<span sec:authentication="principal.username">Anonymous&nbsp; </span>!&nbsp;
 					<input class ="btn btn-outline-success" type="submit" value="Sign Out" />
 				
 			</form>
