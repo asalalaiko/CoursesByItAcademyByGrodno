@@ -13,7 +13,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
+				<li class="nav-item active"><a class="nav-link" href="/">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
@@ -42,18 +42,17 @@
 					tabindex="-1" aria-disabled="true">Disabled</a></li>
 			</ul>
 
-			<div sec:authorize="!isAuthenticated()">
+			<div class="navbar-text" sec:authorize="!isAuthenticated()">
 			<form class="form-inline my-2 my-lg-0"
 				th:action="@{/login}" method="get">
-				Hello, Anonymous!
-					<input class ="btn btn-outline-success" type="submit" value="Sign In" />
+				Hello, Anonymous!&nbsp; <input class ="btn btn-outline-success" type="submit" value="Sign In" />
 			</form>
 			</div>
 
-			<div sec:authorize="isAuthenticated()">
+			<div class="navbar-text" sec:authorize="isAuthenticated()">
 			<form class="form-inline my-2 my-lg-0"
 				th:action="@{/logout}" method="post">
-				Hello, <span sec:authentication="principal.username">Anonymous</span>!
+				Hello, <span sec:authentication="principal.username">Anonymous&nbsp; </span>!
 					<input class ="btn btn-outline-success" type="submit" value="Sign Out" />
 				
 			</form>
