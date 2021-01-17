@@ -5,11 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
-<th:block th:insert="fragments/header.html :: css" />
+<th:block th:insert="blocks/header.html :: css" />
 <body>
-<header th:insert="blocks/header::header"></headerth:insert></header>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+<p>
+    Hello. Choose something in menu please!
+</p>
 
 
-<p th:text="'Привет, ' + ${title} + '!'"/>
+<br />
+<br />
+<th:block th:insert="blocks/scripts.html :: js" />
 </body>
 </html>
