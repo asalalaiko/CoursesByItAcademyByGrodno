@@ -6,10 +6,9 @@
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
-
+<th:block th:insert="blocks/header.html :: css" />
 <body>
-<header th:insert="blocks/header::header"></headerth:insert></header>
-
+<th:block th:insert="blocks/navBar.html :: navBar" />
 
 <div th:if="${#httpServletRequest.requestURI == '/publisher/edit'}">
     <form th:action="@{/publisher/edit}" method="post">
@@ -54,5 +53,6 @@
         </tr>
     </table>
 </div>
+<th:block th:insert="blocks/scripts.html :: js" />
 </body>
 </html>
