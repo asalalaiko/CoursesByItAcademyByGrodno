@@ -12,7 +12,7 @@ public interface UserService {
 
     void addUser(List<User> users);
 
-    void saveUser(User product);
+    void saveUser(User user);
 
     void deleteUser(Integer id);
 

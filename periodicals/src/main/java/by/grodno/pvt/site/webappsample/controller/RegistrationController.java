@@ -44,6 +44,7 @@ public class RegistrationController {
             return "registerView";
         }
 
+        service.saveUser(user);
    //     service.saveUser(convertionService.convert(user, User.class));
 
         return "redirect:/login";
