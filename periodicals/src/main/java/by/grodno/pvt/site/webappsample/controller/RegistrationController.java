@@ -2,6 +2,7 @@ package by.grodno.pvt.site.webappsample.controller;
 
 
 import by.grodno.pvt.site.webappsample.domain.User;
+import by.grodno.pvt.site.webappsample.domain.UserRole;
 import by.grodno.pvt.site.webappsample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +44,7 @@ public class RegistrationController {
             model.addAttribute("User", user);
             return "registerView";
         }
-
+        user.setRole(UserRole.USER);
         service.saveUser(user);
    //     service.saveUser(convertionService.convert(user, User.class));
 

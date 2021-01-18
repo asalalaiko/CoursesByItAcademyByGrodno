@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class UsersController {
+public class UserController {
 
 	static public final Integer SIZE = 5;
 

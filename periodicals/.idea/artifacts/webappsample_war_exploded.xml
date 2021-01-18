@@ -45,6 +45,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.6" />
@@ -69,10 +73,6 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-security:2.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.3.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.3.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.3.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:4.5.3" />
           <element id="library" level="project" name="Maven: org.webjars:jquery:3.5.1" />
           <element id="library" level="project" name="Maven: org.webjars:popper.js:1.16.0" />

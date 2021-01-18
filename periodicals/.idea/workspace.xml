@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/WebMVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/WebMVCConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registerView.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registerView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webappsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webappsample.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,23 +64,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="by.grodno.pvt.site.webappsample.controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\java\by\grodno\pvt\site\webappsample" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
       <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.grodno.pvt.site.webappsample.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -123,6 +134,7 @@
       <workItem from="1610488788058" duration="7385000" />
       <workItem from="1610738786696" duration="58464000" />
       <workItem from="1610951952736" duration="2643000" />
+      <workItem from="1610985307684" duration="17219000" />
     </task>
     <servers />
   </component>
@@ -150,15 +162,17 @@
           <line>84</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/UserAuthService.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/UserAuthService.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="((LinkedHashMap.Entry)((org.springframework.validation.support.BindingAwareModelMap)model).entrySet().toArray()[0]).getKey()" custom="java.util.LinkedHashMap.Entry,org.springframework.validation.support.BindingAwareModelMap" />
-        <watch expression="publisher" language="JAVA" />
-        <watch expression="publisher.id.value" />
-        <watch expression="publisher.id=1" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

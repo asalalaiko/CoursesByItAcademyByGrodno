@@ -44,7 +44,9 @@ public class JPAUserService implements UserService {
     }
 
     @Override
-    public List<User> findByName(String name) {
+    public List<User> findByUsername(String username) {
         return null;
     }
+
+
 }

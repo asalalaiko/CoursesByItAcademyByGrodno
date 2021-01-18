@@ -21,11 +21,11 @@
 			<div class="col-sm  p-1 justify-content-end"
 				style="text-align: right">Email :</div>
 			<div class="col-sm  p-1">
-				<input type="text" th:field="*{email}" />
+				<input type="text" th:field="*{username}" />
 			</div>
 			
 		</div>
-		<div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</div>
+		<div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</div>
 
 
 		<div class="row justify-content-center  p-1">

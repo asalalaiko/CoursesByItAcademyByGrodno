@@ -3,6 +3,7 @@ package by.grodno.pvt.site.webappsample.service;
 import by.grodno.pvt.site.webappsample.domain.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 
@@ -16,6 +17,9 @@ public interface UserService {
 
     void deleteUser(Integer id);
 
-    List<User> findByName(String name);
+    List<User> findByUsername(String username);
+
+
+
 
 }
