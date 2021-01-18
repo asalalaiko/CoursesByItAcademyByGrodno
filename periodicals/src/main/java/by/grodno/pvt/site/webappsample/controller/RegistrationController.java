@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.Collections;
 
 @Controller
 public class RegistrationController {
@@ -44,9 +45,8 @@ public class RegistrationController {
             model.addAttribute("User", user);
             return "registerView";
         }
-        user.setRole(UserRole.USER);
+        user.setRoles(Collections.singleton(UserRole.ADMIN));
         service.saveUser(user);
-   //     service.saveUser(convertionService.convert(user, User.class));
 
         return "redirect:/login";
     }

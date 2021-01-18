@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/WebMVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/WebMVCConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registerView.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registerView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webappsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webappsample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +124,7 @@
       <workItem from="1610738786696" duration="58464000" />
       <workItem from="1610951952736" duration="2643000" />
       <workItem from="1610985307684" duration="17219000" />
+      <workItem from="1611009837180" duration="1514000" />
     </task>
     <servers />
   </component>
@@ -169,8 +159,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/UserAuthService.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="29" />
+          <line>28</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

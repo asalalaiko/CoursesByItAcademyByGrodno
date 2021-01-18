@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Set;
 
 @Data
 @Entity
@@ -42,18 +43,24 @@ public class User implements UserDetails {
     private String activationCode;
 
     @Column(name = "user_role")
+
+
+
+    @ElementCollection(targetClass = UserRole.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private Set<UserRole> roles;
 
 
     public User() {
 
     }
 
-    public User(String username, String password, Boolean active){
+    public User(String username, String password, Boolean active, Set<UserRole> roles){
         this.username = username;
         this.password = password;
         this.active = active;
+        this.roles = roles;
 
     }
     @Override
@@ -106,15 +113,17 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public UserRole getRole() {
-        return role;
+    public String getActivationCode() {
+        return activationCode;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public Set<UserRole> getRoles() {
+        return roles;
     }
 
-
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
+    }
 }
 
 
