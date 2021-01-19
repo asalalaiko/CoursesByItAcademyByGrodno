@@ -17,17 +17,17 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown"><a
+				<li sec:authorize="hasAuthority('ADMIN')" class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> ADMIN </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/product}">Product</a>
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/release}">Release</a>
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/publisher}">Publisher</a>
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/category}">Categories</a>
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/frequency}">Frequency</a>
-						<a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/language}">Language</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/product}">Product</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/release}">Release</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/publisher}">Publisher</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/category}">Categories</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/frequency}">Frequency</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/language}">Language</a>
 
 
 
