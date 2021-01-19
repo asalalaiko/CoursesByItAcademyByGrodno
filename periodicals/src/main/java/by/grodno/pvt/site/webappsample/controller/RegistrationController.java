@@ -45,7 +45,7 @@ public class RegistrationController {
             model.addAttribute("User", user);
             return "registerView";
         }
-        user.setRoles(Collections.singleton(UserRole.ADMIN));
+        user.setRoles(UserRole.USER);
         service.saveUser(user);
 
         return "redirect:/login";

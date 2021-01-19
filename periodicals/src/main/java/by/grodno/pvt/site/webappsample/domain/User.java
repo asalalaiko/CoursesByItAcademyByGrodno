@@ -3,11 +3,13 @@ package by.grodno.pvt.site.webappsample.domain;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 @Data
@@ -42,21 +44,18 @@ public class User implements UserDetails {
 
     private String activationCode;
 
-    @Column(name = "user_role")
 
 
-
-    @ElementCollection(targetClass = UserRole.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<UserRole> roles;
+        @Column(name = "user_role")
+        @Enumerated(EnumType.STRING)
+        private UserRole roles;
 
 
     public User() {
 
     }
 
-    public User(String username, String password, Boolean active, Set<UserRole> roles){
+    public User(String username, String password, Boolean active, UserRole roles){
         this.username = username;
         this.password = password;
         this.active = active;
@@ -100,9 +99,11 @@ public class User implements UserDetails {
     }
 
 
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return Collections.singleton(new SimpleGrantedAuthority(getRoles().name()));
     }
 
     public String getPassword() {
@@ -117,11 +118,11 @@ public class User implements UserDetails {
         return activationCode;
     }
 
-    public Set<UserRole> getRoles() {
+    public UserRole getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<UserRole> roles) {
+    public void setRoles(UserRole roles) {
         this.roles = roles;
     }
 }

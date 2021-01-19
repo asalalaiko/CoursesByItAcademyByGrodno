@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="${title}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -10,7 +11,22 @@
 <th:block th:insert="blocks/navBar.html :: navBar" />
 
 <p>
-    Hello. Choose something in menu please!
+<div class="row" sec:authorize="hasRole('ADMIN')">
+    <div class="col-md-10 col-md-offset-2">
+        <h2>User Has Role Admin</h2>
+    </div>
+</div>
+<div class="row" sec:authorize="hasAuthority('ADMIN')">
+    <div class="col-md-10 col-md-offset-2">
+        <h2>User Has Authority Admin</h2>
+    </div>
+</div>
+
+<div class="row" sec:authorize="hasAuthority('USER')">
+    <div class="col-md-10 col-md-offset-2">
+        <h2>User Has Authority USER</h2>
+    </div>
+</div>
 </p>
 
 
