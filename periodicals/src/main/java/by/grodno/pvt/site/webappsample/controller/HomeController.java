@@ -18,7 +18,7 @@ public class HomeController {
     public String home (Model model){
         model.addAttribute("title", "Главная страница");
         model.addAttribute("release", releaseService.getReleases());
-
+        model.addAttribute("columnQuantity", 5);
 
         return "home";
     }
