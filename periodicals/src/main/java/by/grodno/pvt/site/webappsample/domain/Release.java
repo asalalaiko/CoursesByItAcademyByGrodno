@@ -18,8 +18,16 @@ public class Release {
     @Column
     private String description;
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
     @Column
-    private String link_cover;
+    private String filename;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -64,14 +72,6 @@ public class Release {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getLink_cover() {
-        return link_cover;
-    }
-
-    public void setLink_cover(String link_cover) {
-        this.link_cover = link_cover;
     }
 
     public Product getProduct() {
