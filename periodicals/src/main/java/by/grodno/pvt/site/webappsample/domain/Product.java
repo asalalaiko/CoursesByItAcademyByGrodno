@@ -27,7 +27,7 @@ public class Product {
     private String isin;
 
     @Column()
-    private Date date_first_available;
+    private Date dateFirstAvailable;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List<Release> releases;
@@ -38,15 +38,15 @@ public class Product {
 
     public Product() {}
 
-   public Product(String name, String isin, Date date_first_available) {
+   public Product(String name, String isin, Date dateFirstAvailable) {
         this.name = name;
         this.isin = isin;
-        this.date_first_available = date_first_available;
+        this.dateFirstAvailable = dateFirstAvailable;
     }
-    public Product(String name, String isin, Date date_first_available, Publisher publisher) {
+    public Product(String name, String isin, Date dateFirstAvailable, Publisher publisher) {
         this.name = name;
         this.isin = isin;
-        this.date_first_available = date_first_available;
+        this.dateFirstAvailable = dateFirstAvailable;
         this.publisher = publisher;
     }
 
@@ -74,12 +74,13 @@ public class Product {
         this.isin = isin;
     }
 
-    public Date getDate_first_available() {
-        return date_first_available;
+    public Date getDateFirstAvailable() {
+        return dateFirstAvailable;
     }
 
-    public void setDate_first_available(Date date_first_available) {
-        this.date_first_available = date_first_available;
+    public void setDateFirstAvailable(Date dateFirstAvailable) {
+        
+        this.dateFirstAvailable = dateFirstAvailable;
     }
 
     public List<Release> getReleases() {

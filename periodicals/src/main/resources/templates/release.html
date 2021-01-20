@@ -19,6 +19,7 @@
         <input type="hidden" name="id" th:value="${release.id}" />
         <input type="text" th:value="${release.name}"  name="name" /></p>
         <textarea rows="3" cols="40"  name="description">[[${release.description}]]</textarea>
+        <input type="text" name="price" placeholder="Price" /></p>
         <button type="submit">Edit</button>
     </form>
 </div>
@@ -30,6 +31,7 @@
         <input type="file" name="file" /></p>
         <input type="text" name="name" placeholder="Release" /></p>
         <textarea rows="3" cols="40"  name="description"></textarea>
+        <input type="text" name="price" placeholder="Price" /></p>
         <button type="submit">Add</button>
     </form>
 
@@ -40,6 +42,7 @@
             <th scope="col">Img</th>
             <th scope="col">Name Release</th>
             <th scope="col">Description Release</th>
+            <th scope="col">Price</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -51,6 +54,7 @@
                      height="100" alt=""></td>
             <td th:text="${release.name}" />
             <td th:text="${release.description}" />
+            <td th:text="${release.price}"/>
             <td>
                 <a class="btn btn-danger"
                    th:href="@{'/release/delete?id='+${release.id}}">Delete</a>

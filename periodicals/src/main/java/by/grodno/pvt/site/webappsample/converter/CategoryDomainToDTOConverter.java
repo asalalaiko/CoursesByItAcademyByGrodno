@@ -2,7 +2,7 @@ package by.grodno.pvt.site.webappsample.converter;
 
 
 import by.grodno.pvt.site.webappsample.domain.Category;
-import by.grodno.pvt.site.webappsample.dto.CategoryDTO;
+import by.grodno.pvt.site.webappsample.domain.dto.CategoryDTO;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

@@ -38,9 +38,10 @@ public class ReleaseController  {
     @PostMapping("/release")
     public String addRelease(@RequestParam String name,
                              @RequestParam String description,
+                             @RequestParam Double price,
                              Map<String, Object> model,
                              @RequestParam("file") MultipartFile file) throws IOException {
-        Release release = new Release(name, description);
+        Release release = new Release(name, description, price);
 
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
@@ -80,7 +81,10 @@ public class ReleaseController  {
     }
 
     @PostMapping("/release/edit")
-    public String editRelease(@RequestParam (value="id") Integer id, @RequestParam String name, @RequestParam String description) {
+    public String editRelease(@RequestParam (value="id") Integer id,
+                              @RequestParam String name,
+                              @RequestParam String description,
+                              @RequestParam Double price) {
         Release release = releaseRepo.getOne(id);
         release.setName(name);
         release.setDescription(description);

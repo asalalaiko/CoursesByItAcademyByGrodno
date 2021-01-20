@@ -37,7 +37,7 @@
 <tr th:each="release : ${release}">
 
     <td th:each="i : ${#numbers.sequence(1,columnQuantity)}">
-        <img th:src="@{'/img/release/'+${release.filename}} @{release--}" width="160" height="200" alt="">
+        <img th:src="@{'/img/release/'+${release.filename}}" width="160" height="200" alt="">
     </td>
 
 <br />

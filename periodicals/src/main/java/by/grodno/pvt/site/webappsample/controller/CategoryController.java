@@ -1,7 +1,7 @@
 package by.grodno.pvt.site.webappsample.controller;
 
 import by.grodno.pvt.site.webappsample.domain.Category;
-import by.grodno.pvt.site.webappsample.dto.CategoryDTO;
+import by.grodno.pvt.site.webappsample.domain.dto.CategoryDTO;
 import by.grodno.pvt.site.webappsample.repo.CategoryRepo;
 import by.grodno.pvt.site.webappsample.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

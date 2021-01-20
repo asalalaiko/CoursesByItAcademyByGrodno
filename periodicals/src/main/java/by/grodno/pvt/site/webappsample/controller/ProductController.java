@@ -42,11 +42,11 @@ public class ProductController {
 
 
     @PostMapping("/product")
-    public String addProduct(@RequestParam String productName, @RequestParam String isin, @RequestParam String date_first_available, Publisher publisher) throws ParseException {
+    public String addProduct(@RequestParam String productName, @RequestParam String isin, @RequestParam String dateFirstAvailable, Publisher publisher) throws ParseException {
 
         DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 
-       Product product = new Product(productName, isin, df.parse(date_first_available));
+       Product product = new Product(productName, isin, df.parse(dateFirstAvailable));
        product.setPublisher(publisher);
        productService.saveProduct(product);
        return "redirect:/product";
@@ -70,14 +70,14 @@ public class ProductController {
     }
 
     @PostMapping("/product/edit")
-    public String editProduct(@RequestParam(value="productId") Integer productId, @RequestParam String productName, @RequestParam String isin, @RequestParam String date_first_available, Publisher publisher) throws ParseException {
+    public String editProduct(@RequestParam(value="productId") Integer productId, @RequestParam String productName, @RequestParam String isin, @RequestParam String dateFirstAvailable, Publisher publisher) throws ParseException {
 
         Product product = productRepo.getOne(productId);
         product.setName(productName);
         product.setIsin(isin);
 
         DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-        product.setDate_first_available(df.parse(date_first_available));
+        product.setDateFirstAvailable(df.parse(dateFirstAvailable));
 
 
         product.setPublisher(publisher);

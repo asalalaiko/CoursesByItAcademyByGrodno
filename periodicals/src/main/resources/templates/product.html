@@ -19,7 +19,7 @@
         <input type="hidden" name="productId" th:value="${product.id}" />
         <input type="text" th:value="${product.name}"  name="productName" />
         <input type="text" th:value="${product.isin}"  name="isin" />
-        <input type="date" th:value="${product.date_first_available}"  name="date_first_available" />
+        <input type="date" th:value="${product.dateFirstAvailable}"  name="dateFirstAvailable" />
         <select name="publisher">
             <option selected="selected" disabled>Select publisher</option>
             <option
@@ -38,7 +38,7 @@
     <form th:action="@{/product}" method="post">
         <input type="text" name="productName" placeholder="Product name" />
         <input type="text" name="isin" placeholder="Product isin" />
-        <input type="date" name="date_first_available" placeholder="Product date available" />
+        <input type="date" name="dateFirstAvailable" placeholder="Product date available" />
         <select name="publisher">
             <option selected="selected" disabled>Select publisher</option>
             <option
@@ -68,7 +68,7 @@
             <td th:text="${product.id}" />
             <td th:text="${product.name}" />
             <td th:text="${product.isin}" />
-            <td th:text="${#dates.format(product.date_first_available, 'dd-MM-yyyy')}" />
+            <td th:text="${#dates.format(product.dateFirstAvailable, 'dd-MM-yyyy')}" />
             <td> <a th:href="@{'/publisher/id='+${product.publisher.id}}"th:text="${product.publisher.name}" /> </td>
 
             <td>

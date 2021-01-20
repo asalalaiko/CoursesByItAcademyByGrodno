@@ -18,13 +18,9 @@ public class Release {
     @Column
     private String description;
 
-    public String getFilename() {
-        return filename;
-    }
+   @Column
+   private Double price;
 
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
 
     @Column
     private String filename;
@@ -48,6 +44,12 @@ public class Release {
     public Release(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Release(String name, String description, Double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
     public Integer getId() {
@@ -80,6 +82,22 @@ public class Release {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
 
