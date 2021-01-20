@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/release.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/release.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +130,7 @@
       <workItem from="1611062484842" duration="5104000" />
       <workItem from="1611127683060" duration="13180000" />
       <workItem from="1611165534715" duration="4846000" />
-      <workItem from="1611172743714" duration="6356000" />
+      <workItem from="1611172743714" duration="8154000" />
     </task>
     <servers />
   </component>
