@@ -18,12 +18,16 @@ public class WebMVCConfig implements WebMvcConfigurer {
 		//registry.addViewController("/error").setViewName("error");
 		registry.addViewController("/register").setViewName("register");
 	}
-
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/img/**")
-				.addResourceLocations("file://" + uploadPath + "/");
-		registry.addResourceHandler("/static/**")
-				.addResourceLocations("classpath:/static/");
+		registry.addResourceHandler("/img/**").addResourceLocations(
+				"classpath:/img/");
 	}
+//	@Override
+//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//		registry.addResourceHandler("/img/**")
+//				.addResourceLocations("file://" + uploadPath + "/");
+//		registry.addResourceHandler("/static/**")
+//				.addResourceLocations("classpath:/static/");
+//	}
 }

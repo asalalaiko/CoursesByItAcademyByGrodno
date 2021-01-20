@@ -47,7 +47,7 @@
         <tr th:each="release : ${release}">
 
             <td th:text="${release.id}" />
-            <td><img th:src="@{/release/${release.filename}}" width="100"
+            <td><img th:src="@{'/img/release/'+${release.filename}}" width="80"
                      height="100" alt=""></td>
             <td th:text="${release.name}" />
             <td th:text="${release.description}" />

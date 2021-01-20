@@ -33,6 +33,7 @@ public class ReleaseController  {
     public String getAllRelease(Model model){
         model.addAttribute("release",releaseRepo.findAll());
         return "release";
+
     }
     @PostMapping("/release")
     public String addRelease(@RequestParam String name,

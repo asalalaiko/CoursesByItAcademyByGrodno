@@ -131,6 +131,7 @@
       <workItem from="1611009837180" duration="1514000" />
       <workItem from="1611036412033" duration="7518000" />
       <workItem from="1611062484842" duration="5104000" />
+      <workItem from="1611127683060" duration="8033000" />
     </task>
     <servers />
   </component>
@@ -157,11 +158,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ProductController.java</url>
           <line>84</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/HomeController.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
