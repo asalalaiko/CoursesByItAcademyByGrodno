@@ -3,23 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/converter/CategoryDomainToDTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/converter/CategoryDomainToDTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/dto/CategoryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/release.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/controller/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/converter/CategoryDomainToDTOConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/converter/CategoryDomainToDTOConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/dto/CategoryDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/release.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -74,17 +64,18 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\admin" />
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.grodno.pvt.site.webappsample.controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\java\by\grodno\pvt\site\webappsample" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
       <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="by.grodno.pvt.site.webappsample.controller" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -143,6 +134,7 @@
       <workItem from="1611062484842" duration="5104000" />
       <workItem from="1611127683060" duration="13180000" />
       <workItem from="1611165534715" duration="4846000" />
+      <workItem from="1611172743714" duration="6356000" />
     </task>
     <servers />
   </component>

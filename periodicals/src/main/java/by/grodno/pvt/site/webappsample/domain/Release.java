@@ -41,10 +41,10 @@ public class Release {
 //        this.description = description;
 //    }
 
-    public Release(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
+//    public Release(String name, String description) {
+//        this.name = name;
+//        this.description = description;
+//    }
 
     public Release(String name, String description, Double price) {
         this.name = name;
