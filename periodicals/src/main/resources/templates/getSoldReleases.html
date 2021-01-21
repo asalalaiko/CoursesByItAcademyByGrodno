@@ -10,33 +10,49 @@
 <body>
 <th:block th:insert="blocks/navBar.html :: navBar" />
 
-<p class="row">You have selected issues to buy:</p>
+
 
 <div class="container">
+
+    <p class="row">You have selected issues to buy:</p>
     <div class="row">
 
         <div class="border col-lg-1">N</div>
-        <div class="border col-lg-6">Issue</div>
-        <div class="border col-lg-5">Price</div>
+        <div class="border col-lg-8">Issue</div>
+        <div class="border col-lg-2">Price</div>
+        <div class="border col-lg-1">Delete</div>
 
 
     </div>
 
-    <div class="row" th:each="release : ${release}">
+    <div class="row" th:each="release, iterStat  : ${release}">
 
-        <div class="border col-lg-1" th:text="${release.id}"></div>
+        <div class="border col-lg-1" th:text="${iterStat.count}"></div>
         <div class="border col-lg-3">
-            <a  th:href="@{'/release?id='+${release.id}}">
+            <a th:href="@{'/release?id='+${release.id}}">
                 <img th:src="@{'/img/release/'+${release.filename}}" width="80" height="100" alt="">
             </a>
         </div>
-        <div class="border col-lg-3" th:text="${release.name}"></div>
-        <div class="border col-lg-5" th:text="${release.price}"></div>
+        <div class="border col-lg-5" th:text="${release.name}"></div>
+        <div class="border col-lg-2" th:text="${release.price}"></div>
+        <div class="border col-lg-1">
+
+        </div>
+    </div>
+
+    <div class="col align-self-end">
 
     </div>
+
+
+    <div class="row">
+        <div class="col-8"> </div>
+        <div class="col-4">
+            <a class="btn btn-success" th:href="@{/sold/apply}">Perform Action</a>
+            <a class="btn btn-danger" th:href="@{/sold/delete}">Delete all</a>
+        </div>
+    </div>
 </div>
-
-
 
 <br />
 <br />

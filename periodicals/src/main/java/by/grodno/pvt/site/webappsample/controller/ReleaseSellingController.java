@@ -58,4 +58,17 @@ public class ReleaseSellingController {
 
         return "getSoldReleases";
     }
+
+    @GetMapping("/sold/delete")
+    public String soldDelAll(Model model, HttpSession session){
+        getSoldReleases(session).clear();
+        return "getSoldReleases";
+    }
+
+//    @GetMapping ("/sold/delete/{id}")
+//    public String soldDelOne(@PathVariable Integer id, Model model, HttpSession session){
+//        getSoldReleases(session).clear();
+//        getSoldReleases(session).remove(id);
+//        return "getSoldReleases";
+    }
 }
