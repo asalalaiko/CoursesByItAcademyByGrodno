@@ -34,11 +34,18 @@
 
 
 
+<div class="container border-5" >
 <tr th:each="release : ${release}">
+<td>
+        <a class="border-5" th:href="@{'/release?id='+${release.id}}">
+            <img th:src="@{'/img/release/'+${release.filename}}" width="160" height="200" alt="">
+        </a>
 
-    <td th:each="i : ${#numbers.sequence(1,columnQuantity)}">
-        <img th:src="@{'/img/release/'+${release.filename}}" width="160" height="200" alt="">
-    </td>
+</td>
+</tr>
+
+
+</div>
 
 <br />
 <br />

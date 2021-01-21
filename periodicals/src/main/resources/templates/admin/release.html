@@ -18,7 +18,7 @@
         [[${release.id}]]
         <input type="hidden" name="id" th:value="${release.id}" />
         <input type="text" th:value="${release.name}"  name="name" /></p>
-        <textarea rows="3" cols="40"  name="description">[[${release.description}]]</textarea>
+        <textarea rows="3" cols="40"  name="description">[[${release.description}]]</textarea></p>
         <input type="text" name="price" th:value="${release.price}" /></p>
         <button type="submit">Edit</button>
     </form>
@@ -30,7 +30,7 @@
     <form th:action="@{/admin/release}"  enctype="multipart/form-data" method="post">
         <input type="file" name="file" /></p>
         <input type="text" name="name" placeholder="Release" /></p>
-        <textarea rows="3" cols="40"  name="description"></textarea>
+        <textarea rows="3" cols="40"  name="description"></textarea></p>
         <input type="text" name="price" placeholder="Price" /></p>
         <button type="submit">Add</button>
     </form>

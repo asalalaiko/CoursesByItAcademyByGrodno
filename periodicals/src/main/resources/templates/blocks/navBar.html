@@ -34,8 +34,8 @@
 
 
 						<div class="dropdown-divider"></div>
-						<a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/users}">User list</a>
-						<a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/sold}">Sold Users</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/users}">User list</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/sold}">Sold Users</a>
 
 					</div></li>
 				<li class="nav-item"><a class="nav-link disabled" href="#"
@@ -56,7 +56,12 @@
 					<input class ="btn btn-outline-success" type="submit" value="Sign Out" />
 				
 			</form>
+			</div >
+
+			<div class="navbar-text my-rg-2">
+				 Cart ()
 			</div>
+
 		</div>
 	</nav>
 

@@ -18,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -133,6 +133,7 @@
       <workItem from="1611172743714" duration="8154000" />
       <workItem from="1611213118276" duration="2517000" />
       <workItem from="1611215922674" duration="372000" />
+      <workItem from="1611216795544" duration="12737000" />
     </task>
     <servers />
   </component>
@@ -151,5 +152,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseSellingController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
