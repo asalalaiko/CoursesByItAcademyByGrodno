@@ -23,6 +23,8 @@
             <h2 th:text="${release.description}" />
             Buy this issue:<br>
             $ <th:block th:text="${release.price}"/>
+            <a class="btn btn-danger"
+               th:href="@{'/release/buy?id='+${release.id}}">ADD CART</a>
 
 
 
