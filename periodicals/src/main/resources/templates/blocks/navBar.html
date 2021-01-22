@@ -16,7 +16,6 @@
 				<li class="nav-item active"><a class="nav-link" href="/">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a sec:authorize="hasAuthority('USER')" class="dropdown-item" th:href="@{/sold}">Sold Release</a>
 				<li sec:authorize="hasAuthority('ADMIN')" class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -28,18 +27,22 @@
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/category}">Categories</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/frequency}">Frequency</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/language}">Language</a>
-
-
-
-
-
 						<div class="dropdown-divider"></div>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/users}">User list</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/sold}">Sold Release</a>
 
 					</div></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#"
-					tabindex="-1" aria-disabled="true">Disabled</a></li>
+
+				<li sec:authorize="hasAuthority('USER')" class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> User profile </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a sec:authorize="hasAuthority('USER')" class="dropdown-item" th:href="@{/sold}">The list of selected issues</a>
+						<a sec:authorize="hasAuthority('USER')" class="dropdown-item" th:href="@{/user/address}">Addresses</a>
+
+					</div>
+				</li>
 			</ul>
 
 			<div class="navbar-text" sec:authorize="!isAuthenticated()">
@@ -58,9 +61,9 @@
 			</form>
 			</div >
 
-			<div class="navbar-text my-rg-2">
-				 Cart ()
-			</div>
+<!--			<div class="navbar-text my-rg-2">-->
+<!--				 Cart ()-->
+<!--			</div>-->
 
 		</div>
 	</nav>

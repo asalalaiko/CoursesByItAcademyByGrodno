@@ -76,4 +76,11 @@ public class ReleaseSellingController {
         getSoldReleases(session).remove(num);
         return "redirect:/sold";
     }
+
+    @GetMapping("/sold/apply")
+    public String soldApply(Model model, HttpSession session){
+
+
+    return "apply";
+    }
 }

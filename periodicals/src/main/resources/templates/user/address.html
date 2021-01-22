@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+
+
+<div class="container">
+
+    <p class="row">Delivery addresses:</p>
+    <div class="row">
+        <div class="col-4">
+            <a class="btn btn-success" th:href="@{/user/addressNew}">Add new address delivery:</a>
+        </div>
+    </div>
+
+    <div class="row" th:each="address : ${address}">
+        <div class="border"> <div th:text="${address.addressee}" /></div>
+            <div th:text="${address.phoneNumber}"/>
+            <div th:text="${address.address}"/>
+    </div>
+</div>
+
+<br />
+<br />
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>

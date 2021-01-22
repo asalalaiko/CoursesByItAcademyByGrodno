@@ -8,6 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Table(name="orders")
 public class Order {
 
     @Id
@@ -15,15 +16,18 @@ public class Order {
     private Integer id;
 
 
-    @ManyToOne()
-    @JoinColumn(name = "user_id")
-    private User user;
+
 
     @Column()
     private Date createDate;
 
     @Column
     private boolean status;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
 
 
     public Order()
@@ -40,13 +44,6 @@ public class Order {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Date getCreateDate() {
         return createDate;
