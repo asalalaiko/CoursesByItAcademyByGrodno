@@ -25,7 +25,7 @@ public class Release {
     @Column
     private String filename;
 
-    @ManyToOne(optional = true)
+    @ManyToOne()
     @JoinColumn(name = "product_id")
     private Product product;
 

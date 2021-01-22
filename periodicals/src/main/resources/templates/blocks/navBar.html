@@ -16,7 +16,7 @@
 				<li class="nav-item active"><a class="nav-link" href="/">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a sec:authorize="hasAuthority('USER')" class="dropdown-item" th:href="@{/sold}">Sold Release</a>
 				<li sec:authorize="hasAuthority('ADMIN')" class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"

@@ -10,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -27,6 +28,12 @@ public class User implements UserDetails {
     @NotNull
     @Column(nullable = false)
     private String password;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.LAZY)
+    private List<Order> orders;
+
+
+
 
     public Boolean getActive() {
         return active;
@@ -124,6 +131,14 @@ public class User implements UserDetails {
 
     public void setRoles(UserRole roles) {
         this.roles = roles;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
 

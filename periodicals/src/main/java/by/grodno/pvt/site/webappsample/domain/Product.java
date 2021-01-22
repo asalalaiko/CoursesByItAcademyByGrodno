@@ -29,7 +29,7 @@ public class Product {
     @Column()
     private Date dateFirstAvailable;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.LAZY)
     private List<Release> releases;
 
     @ManyToOne

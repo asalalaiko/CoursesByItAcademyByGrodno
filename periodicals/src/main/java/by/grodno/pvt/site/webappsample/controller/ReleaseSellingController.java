@@ -29,6 +29,11 @@ public class ReleaseSellingController {
         return (List<Release>) session.getAttribute("selectRelease");
     }
 
+//    private List<Release> delSoldReleases(HttpSession session) {
+//        return (List<Release>) session.removeValue();
+//    }
+//
+
     @GetMapping("/release/buy")
     public String editUserForm(@RequestParam(value="id") Integer id, HttpSession session) {
 
@@ -37,7 +42,7 @@ public class ReleaseSellingController {
         if (attribute == null) {
             session.setAttribute("selectRelease", new ArrayList<Release>());
         }
-        getSoldReleases(session).add(convertionService.convert(releaseService.getRelease(id), Release.class));
+        getSoldReleases(session).add(convertionService.convert(releaseService.getRelease(id).getId(), Release.class));
 
    //     getSoldReleases(session).add(releaseService.getRelease(id), Release.class);
 
@@ -65,10 +70,10 @@ public class ReleaseSellingController {
         return "getSoldReleases";
     }
 
-//    @GetMapping ("/sold/delete/{id}")
-//    public String soldDelOne(@PathVariable Integer id, Model model, HttpSession session){
-//        getSoldReleases(session).clear();
-//        getSoldReleases(session).remove(id);
-//        return "getSoldReleases";
+    @GetMapping ("/sold/delete/{num}")
+    public String soldDelOne(@PathVariable Integer num, Model model, HttpSession session){
+
+        getSoldReleases(session).remove(num);
+        return "redirect:/sold";
     }
 }

@@ -22,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -140,6 +140,7 @@
       <workItem from="1611215922674" duration="372000" />
       <workItem from="1611216795544" duration="12737000" />
       <workItem from="1611259775372" duration="4850000" />
+      <workItem from="1611298946286" duration="11743000" />
     </task>
     <servers />
   </component>
@@ -158,21 +159,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseSellingController.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseSellingController.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
