@@ -13,11 +13,11 @@ public class UserAddress {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(unique = true)
+    @Column
     private String addressee;
 
     @Column

@@ -26,13 +26,15 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "user", fetch = FetchType.LAZY)
     private List<Order> orders = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "user", fetch = FetchType.LAZY)
     private List<UserAddress> userAddresses = new ArrayList<>();
 
-
+    @Column(name = "user_role")
+    @Enumerated(EnumType.STRING)
+    private UserRole roles;
 
     public Boolean getActive() {
         return active;
@@ -49,13 +51,6 @@ public class User implements UserDetails {
     private Boolean active;
 
     private String activationCode;
-
-
-
-        @Column(name = "user_role")
-        @Enumerated(EnumType.STRING)
-        private UserRole roles;
-
 
     public User() {
 
