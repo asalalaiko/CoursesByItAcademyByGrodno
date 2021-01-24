@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+        <div class="container">
+            <div class="row justify-content-center  p-1">
+                Edit details addressee
+            </div>
+
+            <form th:action="@{/user/addressEdit}" method="post" th:object="${useraddress}">
+
+                <div class="row justify-content-center  p-1">
+                    <div class="col-sm  p-1 justify-content-end"
+                         style="text-align: right">Name and surname of the recipient :</div>
+                    <div class="col-sm  p-1">
+                        <input type="text" th:field="*{addressee}" "/>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('addressee')}" th:errors="*{addressee}">Name Error</div>
+
+
+                <div class="row justify-content-center  p-1">
+                    <div class="col-sm  p-1 justify-content-end"
+                         style="text-align: right">Number phone :</div>
+                    <div class="col-sm  p-1">
+                        <input type="text" th:field="*{phoneNumber}"/>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Name Error</div>
+
+
+                <div class="row justify-content-center  p-1">
+                    <div class="col-sm  p-1 justify-content-end"
+                         style="text-align: right">Mailing address :</div>
+                    <div class="col-sm  p-1">
+                        <input type="text" th:field="*{address}"/>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Name Error</div>
+
+                <div class="row justify-content-center  p-1">
+                    <input class="btn btn-success" type="submit" value="Add new address" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>

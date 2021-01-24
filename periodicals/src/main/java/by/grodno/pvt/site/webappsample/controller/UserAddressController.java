@@ -7,7 +7,6 @@ import by.grodno.pvt.site.webappsample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,20 +22,21 @@ public class UserAddressController {
     private UserAddressServise userAddressServise;
     @Autowired
     private UserService userService;
-//    @Autowired
-//    private User user;
+
 
 
 
     @GetMapping("/user/address")
-    public String getAllUserAddress(Model model) {
-        model.addAttribute("address", userAddressServise.getUserAddresses());
+    public String getAllUserAddress(Model model, Authentication authentication) {
+
+        User user = (User) authentication.getPrincipal();
+        model.addAttribute("address", userAddressServise.getUserAddressesByUser(user));
 
         return "/user/address";
     }
 
     @GetMapping("/user/addressNew")
-    String gerForm(UserAddress userAddress, Model model) {
+    public String gerForm(UserAddress userAddress, Model model) {
         if (userAddress == null) {
             userAddress = new UserAddress();
         }
@@ -64,5 +64,15 @@ public class UserAddressController {
 
         return "redirect:/user/address";
     }
+
+    @GetMapping("/user/address/edit/")
+    public String getAddress(@RequestParam(value="id") Integer id, Model model){
+        UserAddress userAddress = userAddressServise.getUserAddress(id);
+        model.addAttribute("useraddress", userAddress);
+
+        return "useraddress";
+
+    }
+
 
 }

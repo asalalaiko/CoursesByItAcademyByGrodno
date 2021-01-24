@@ -1,5 +1,6 @@
 package by.grodno.pvt.site.webappsample.service.impl;
 
+import by.grodno.pvt.site.webappsample.domain.User;
 import by.grodno.pvt.site.webappsample.domain.UserAddress;
 import by.grodno.pvt.site.webappsample.repo.UserAddressRepo;
 import by.grodno.pvt.site.webappsample.service.UserAddressServise;
@@ -16,9 +17,16 @@ public class JPAUserAddress implements UserAddressServise {
     @Autowired
     private UserAddressRepo userAddressRepo;
 
+
     @Override
     public List<UserAddress> getUserAddresses() {
         return userAddressRepo.findAll();
+    }
+
+    @Override
+    public List<UserAddress> getUserAddressesByUser(User user) {
+        return userAddressRepo.findByUser(user);
+
     }
 
     @Override
