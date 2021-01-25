@@ -2,6 +2,8 @@ package by.grodno.pvt.site.webappsample.domain;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -14,6 +16,7 @@ public class UserAddress {
     private Integer id;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "user_id")
     private User user;
 
