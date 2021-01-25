@@ -36,7 +36,7 @@ public class UserAddressController {
     }
 
     @GetMapping("/user/addressNew")
-    public String gerForm(UserAddress userAddress, Model model) {
+    public String gerFormNewAddress(UserAddress userAddress, Model model) {
         if (userAddress == null) {
             userAddress = new UserAddress();
         }
@@ -44,14 +44,9 @@ public class UserAddressController {
         return "/user/addressNew";
     }
 
-    @GetMapping("/user/address/delete/")
-    public String deleteUserAddress(@RequestParam(value="id") Integer id) {
-        userAddressServise.deleteUserAddress(id);
-        return "redirect:/user/address";
-    }
 
     @PostMapping("/user/addressNew")
-    public String registerPage(@Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
+    public String addNewAddressPage(@Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("UserAddress", userAddress);
@@ -65,14 +60,50 @@ public class UserAddressController {
         return "redirect:/user/address";
     }
 
-    @GetMapping("/user/address/edit/")
-    public String getAddress(@RequestParam(value="id") Integer id, Model model){
-        UserAddress userAddress = userAddressServise.getUserAddress(id);
+    @GetMapping("/user/address/delete/")
+    public String deleteUserAddress(@RequestParam(value="id") Integer id) {
+        userAddressServise.deleteUserAddress(id);
+        return "redirect:/user/address";
+    }
+
+    @GetMapping("/user/addressEdit/")
+    public String getAddress(@RequestParam(value="id") Integer id, UserAddress userAddress, Model model){
+        userAddress = userAddressServise.getUserAddress(id);
         model.addAttribute("useraddress", userAddress);
 
-        return "useraddress";
+        return "user/addressEdit";
 
     }
 
+    @PostMapping("/user/addressEdit/")
+//    public String editAddress(@RequestParam(value="id") Integer id, @Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
+//
+//        if (bindingResult.hasErrors()) {
+//            model.addAttribute("UserAddress", userAddress);
+//            return "user/addressEdit";
+//        }
+//
+//        //  User user = (User) authentication.getPrincipal();
+//        //  userAddress.setUser(user);
+//
+//
+//        userAddress.setId(id);
+//        userAddressServise.saveUserAddress(userAddress);
+//
+//        return "redirect:/user/address";
+//}
+    public String editAddressPage(@RequestParam(value="id") Integer id, @Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("UserAddress", userAddress);
+            return "user/addressNew";
+        }
+        userAddress.setId(id);
+        User user = (User) authentication.getPrincipal();
+        userAddress.setUser(user);
+        userAddressServise.saveUserAddress(userAddress);
+
+        return "redirect:/user/address";
+    }
 
 }

@@ -17,13 +17,16 @@
                 Edit details addressee
             </div>
 
-            <form th:action="@{/user/addressEdit}" method="post" th:object="${useraddress}">
+            <form th:action="@{/user/addressEdit/}" method="post" th:object="${useraddress}">
+         
+                <input type="hidden" name="id" th:value="${useraddress.id}" />
+
 
                 <div class="row justify-content-center  p-1">
                     <div class="col-sm  p-1 justify-content-end"
                          style="text-align: right">Name and surname of the recipient :</div>
                     <div class="col-sm  p-1">
-                        <input type="text" th:field="*{addressee}" "/>
+                        <input type="text" th:field="*{addressee}"/>
                     </div>
 
                 </div>
@@ -52,7 +55,7 @@
                 <div class="row justify-content-center alert alert-danger" role="alert" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Name Error</div>
 
                 <div class="row justify-content-center  p-1">
-                    <input class="btn btn-success" type="submit" value="Add new address" />
+                    <input class="btn btn-success" type="submit" value="Edit address" />
                 </div>
             </form>
 

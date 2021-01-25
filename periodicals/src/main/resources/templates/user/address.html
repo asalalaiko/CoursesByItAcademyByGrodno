@@ -29,7 +29,7 @@
                                 <h5 class="card-title"> <div th:text="${address.addressee}" /></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><div th:text="${address.phoneNumber}"/></h6>
                                 <p class="card-text"><div th:text="${address.address}"/></p>
-                                <a th:href="@{'/user/address/edit/?id='+${address.id}}"class="card-link">Edit</a>
+                                <a th:href="@{'/user/addressEdit/?id='+${address.id}}"class="card-link">Edit</a>
                                 <a th:href="@{'/user/address/delete/?id='+${address.id}}"class="card-link">Delete</a>
                             </div>
                         </div>
