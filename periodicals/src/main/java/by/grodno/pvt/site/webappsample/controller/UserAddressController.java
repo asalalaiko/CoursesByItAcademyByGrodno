@@ -76,22 +76,6 @@ public class UserAddressController {
     }
 
     @PostMapping("/user/addressEdit/")
-//    public String editAddress(@RequestParam(value="id") Integer id, @Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
-//
-//        if (bindingResult.hasErrors()) {
-//            model.addAttribute("UserAddress", userAddress);
-//            return "user/addressEdit";
-//        }
-//
-//        //  User user = (User) authentication.getPrincipal();
-//        //  userAddress.setUser(user);
-//
-//
-//        userAddress.setId(id);
-//        userAddressServise.saveUserAddress(userAddress);
-//
-//        return "redirect:/user/address";
-//}
     public String editAddressPage(@RequestParam(value="id") Integer id, @Valid UserAddress userAddress, Authentication authentication, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
