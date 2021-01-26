@@ -18,8 +18,8 @@ public class Release {
     @Column
     private String description;
 
-   @Column
-   private Double price;
+    @Column
+    private Double price;
 
 
     @Column

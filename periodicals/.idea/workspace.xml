@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/getSoldReleases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/getSoldReleases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,7 +154,7 @@
       <workItem from="1611660750462" duration="2842000" />
       <workItem from="1611664450871" duration="260000" />
       <workItem from="1611680319861" duration="6935000" />
-      <workItem from="1611690612378" duration="4393000" />
+      <workItem from="1611690612378" duration="5895000" />
     </task>
     <servers />
   </component>
