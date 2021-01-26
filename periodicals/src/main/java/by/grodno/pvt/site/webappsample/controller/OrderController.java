@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -19,13 +20,25 @@ public class OrderController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/order")
+    @GetMapping("/user/order")
     public String getOrder (Model model, Authentication authentication) {
 
         User user = (User) authentication.getPrincipal();
         model.addAttribute("address", userAddressServise.getUserAddressesByUser(user));
 
-        return "/order";
+
+
+        return "/user/order";
+    }
+
+
+    @PostMapping("/user/order")
+    public String saveOrder(){
+
+
+
+
+        return "redirect:/user/pay";
     }
 
 

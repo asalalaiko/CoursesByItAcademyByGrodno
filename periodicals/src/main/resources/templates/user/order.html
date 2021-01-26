@@ -10,45 +10,35 @@
 <body>
 <th:block th:insert="blocks/navBar.html :: navBar" />
 
+<br />
+<br />
 
 
 <div class="container">
-    <p class="row">Delivery addresses:</p>
-    <div class="row was-validated">
-        <div class="form-group">
-            <select class="custom-select custom-select-sm">
-                    <option value="">Open this to select a shipping address</option>
-                        <div th:each="address : ${address}">
-                            <option value="${address.id}}" th:text="${address.addressee} />>
-                        </div>
-            </select>
-        <div class="invalid-feedback">Example invalid custom select feedback</div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="card-deck">
-            <div class="row" th:each="address : ${address}">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"> <div th:text="${address.addressee}" /></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><div th:text="${address.phoneNumber}"/></h6>
-                            <p class="card-text"><div th:text="${address.address}"/></p>
-                            <a th:href="@{'/user/addressEdit/?id='+${address.id}}"class="card-link">Edit</a>
-                            <a th:href="@{'/user/address/delete/?id='+${address.id}}"class="card-link">Delete</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-6 offset-md-3">
+        <form class="was-validated form-inline">
+            <div class="form-group">
+                <select class="custom-select mx-sm-3 " name="address" required>
+                        <option value="">Open this to select a shipping address</option>
+                                <option
+                                        th:each="address : ${address}"
+                                        th:value="${address.id}" th:text="${address.addressee}+' | '+${address.phoneNumber}+' | '+${address.address}"
+                                >
+                                </option>
+                </select>
+                <a class="btn btn-outline-success" th:href="@{/user/addressNew}">Add</a>
+                <div class="invalid-feedback ">Delivery addresses</div>
             </div>
-        </div>
-
-
+        </form>
     </div>
+</div>
+
+
+
+
 
     <br />
     <br />
-    <th:block th:insert="blocks/scripts.html :: js" />
+<th:block th:insert="blocks/scripts.html :: js" />
 </body>
 </html>
