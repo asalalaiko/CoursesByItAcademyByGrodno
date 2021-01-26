@@ -40,6 +40,14 @@ public class User implements UserDetails {
         return active;
     }
 
+    public List<UserAddress> getUserAddresses() {
+        return userAddresses;
+    }
+
+    public void setUserAddresses(List<UserAddress> userAddresses) {
+        this.userAddresses = userAddresses;
+    }
+
     public void setActive(Boolean active) {
         this.active = active;
     }

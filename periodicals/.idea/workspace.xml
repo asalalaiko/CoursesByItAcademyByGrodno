@@ -19,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -62,12 +62,8 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\admin" />
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="by.grodno.pvt.site.webappsample.controller" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="by.grodno.pvt.site.webappsample.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\user" />
@@ -75,6 +71,15 @@
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\java\by\grodno\pvt\site\webappsample" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
       <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.grodno.pvt.site.webappsample.service" />
+      <recent name="by.grodno.pvt.site.webappsample.service.impl" />
+      <recent name="by.grodno.pvt.site.webappsample.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\admin" />
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,6 +150,8 @@
       <workItem from="1611566949885" duration="7691000" />
       <workItem from="1611604122377" duration="137000" />
       <workItem from="1611605008097" duration="3254000" />
+      <workItem from="1611660750462" duration="2842000" />
+      <workItem from="1611664450871" duration="260000" />
     </task>
     <servers />
   </component>
@@ -169,12 +176,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/UserAddressController.java</url>
-          <line>92</line>
+          <line>78</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ReleaseSellingController.java</url>
-          <line>72</line>
+          <line>66</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

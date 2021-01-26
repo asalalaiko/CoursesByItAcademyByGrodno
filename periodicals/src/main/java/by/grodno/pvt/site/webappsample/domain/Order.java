@@ -1,37 +1,43 @@
 package by.grodno.pvt.site.webappsample.domain;
 
+
+import by.grodno.pvt.site.webappsample.domain.OrderList;
+import by.grodno.pvt.site.webappsample.domain.User;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 
 @Data
 @Entity
-@Table(name="orders")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column()
-    private Date createDate;
-
-    @Column
-    private boolean status;
-
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column
+    private Date dateOrder;
 
+    @Column
+    private Boolean statePlayment;
 
-    public Order()
-    {
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)
+    private List<OrderList> orderLists = new ArrayList<>();
+
+    public Order(){
 
     }
-
 
     public Integer getId() {
         return id;
@@ -41,20 +47,39 @@ public class Order {
         this.id = id;
     }
 
-
-    public Date getCreateDate() {
-        return createDate;
+    public User getUser() {
+        return user;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public boolean isStatus() {
-        return status;
+    public Date getDateOrder() {
+        return dateOrder;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setDateOrder(Date dateOrder) {
+        this.dateOrder = dateOrder;
     }
+
+    public Boolean getStatePlayment() {
+        return statePlayment;
+    }
+
+    public void setStatePlayment(Boolean statePlayment) {
+        this.statePlayment = statePlayment;
+    }
+
+    public Integer getSumOrder() {
+        return sumOrder;
+    }
+
+    public void setSumOrder(Integer sumOrder) {
+        this.sumOrder = sumOrder;
+    }
+
+    @Column
+    private Integer sumOrder;
+
 }
