@@ -15,6 +15,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Table(name="orders")
 public class Order {
 
     @Id
@@ -26,10 +27,14 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "order")
+    @JoinColumn(name = "address_id")
+    private UserAddress userAddress;
+
     @Column
     private Date dateOrder;
 
-    @Column
+    @Column(columnDefinition = "boolean default false")
     private Boolean statePlayment;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)

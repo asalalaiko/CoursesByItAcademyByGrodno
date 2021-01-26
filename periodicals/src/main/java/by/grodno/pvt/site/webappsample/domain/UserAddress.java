@@ -29,6 +29,9 @@ public class UserAddress {
     @Column
     private String address;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Order order;
+
 
     public User getUser() {
         return user;
