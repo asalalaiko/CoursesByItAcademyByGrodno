@@ -33,8 +33,8 @@ public class Order {
     @Column
     private Date dateOrder;
 
-    @Column(columnDefinition = "boolean default false")
-    private Boolean statePlayment;
+    @Column
+    private Boolean statePlayment = false;;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)
     private List<OrderList> orderLists = new ArrayList<>();

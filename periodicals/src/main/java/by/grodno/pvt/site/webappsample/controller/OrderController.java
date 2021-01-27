@@ -101,6 +101,8 @@ public class OrderController {
             orderListService.saveOrderList(orderList);
         }
 
+        getSoldReleases(session).clear();
+
         return "redirect:/user/pay";
     }
 
