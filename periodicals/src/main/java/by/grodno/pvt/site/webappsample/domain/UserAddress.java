@@ -29,7 +29,8 @@ public class UserAddress {
     @Column
     private String address;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "user")
+    @JoinColumn(name = "order_id")
     private Order order;
 
 

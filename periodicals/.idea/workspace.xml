@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,6 +157,7 @@
       <workItem from="1611680319861" duration="6935000" />
       <workItem from="1611690612378" duration="5895000" />
       <workItem from="1611730628071" duration="15182000" />
+      <workItem from="1611766979131" duration="7811000" />
     </task>
     <servers />
   </component>
@@ -180,8 +182,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="5" />
+          <line>95</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -12,11 +12,36 @@
 
 <br />
 <br />
+<ul class="container list-unstyled">
+    <div class="row justify-content-md-center" th:each="release  : ${release}">
+        <li class="media">
+            <img class="mr-3" th:src="@{'/img/release/'+${release.filename}}" alt="" width="20" height="25">
+            <div class="media-body">
+                <h7 class="mt-0 mb-1" th:text="${release.product}+' ('+${release.name}+') - '+${release.price}+'$'" />
+            </div>
+        </li>
+    </div>
+</ul>
+
+
+<!--            <form th:action="@{/user/order/}" method="post">-->
+<!--        <select  name="address" >-->
+<!--            <option selected="selected" disabled>Open this to select a shipping address</option>-->
+<!--            <option-->
+<!--                    th:each="address : ${address}"-->
+<!--                    th:value="${address.id}" th:text="${address.addressee}+' | '+${address.phoneNumber}+' | '+${address.address}"-->
+<!--            >-->
+<!--            </option>-->
+<!--        </select>-->
+<!--        &lt;!&ndash;                <a class="btn btn-outline-success" th:href="@{/user/addressNew}">Add</a>&ndash;&gt;-->
+<!--        <button type="submit">Edit</button>-->
+<!--    </form>-->
+
 
 
 <div class="container">
     <div class="col-md-6 offset-md-3">
-        <form class="was-validated form-inline">
+        <form class="was-validated form-inline" th:action="@{/user/order/}" method="post">
             <div class="form-group">
                 <select class="custom-select mx-sm-3 " name="address" required>
                         <option value="">Open this to select a shipping address</option>
@@ -26,22 +51,10 @@
                                 >
                                 </option>
                 </select>
-                <a class="btn btn-outline-success" th:href="@{/user/addressNew}">Add</a>
+<!--                <a class="btn btn-outline-success" th:href="@{/user/addressNew}">Add</a>-->
                 <div class="invalid-feedback ">Delivery addresses</div>
             </div>
-
-
-        <ul class="list-unstyled">
-            <div class="row justify-content-md-center" th:each="release  : ${release}">
-                <li class="media">
-                    <img class="mr-3" th:src="@{'/img/release/'+${release.filename}}" alt="" width="20" height="25">
-                    <div class="media-body">
-                        <h7 class="mt-0 mb-1" th:text="${release.product}+' ('+${release.name}+') - '+${release.price}" >
-                    </div>
-                </li>
-            </div>
-        </ul>
-         <div th:text="'Total: '+${sum}+'$'"/>         <button class="btn btn-outline-success" type="submit">BUY</button>
+            <button class="btn btn-outline-success container justify-content-md-center" type="submit" th:text="'Buy: '+${sum}+'$'">BUY</button>
         </form>
 
     </div>

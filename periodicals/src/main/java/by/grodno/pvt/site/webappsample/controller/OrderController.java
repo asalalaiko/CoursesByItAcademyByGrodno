@@ -1,14 +1,8 @@
 package by.grodno.pvt.site.webappsample.controller;
 
 
-import by.grodno.pvt.site.webappsample.domain.Order;
-import by.grodno.pvt.site.webappsample.domain.Release;
-import by.grodno.pvt.site.webappsample.domain.User;
-import by.grodno.pvt.site.webappsample.domain.UserAddress;
-import by.grodno.pvt.site.webappsample.service.OrderService;
-import by.grodno.pvt.site.webappsample.service.ReleaseService;
-import by.grodno.pvt.site.webappsample.service.UserAddressServise;
-import by.grodno.pvt.site.webappsample.service.UserService;
+import by.grodno.pvt.site.webappsample.domain.*;
+import by.grodno.pvt.site.webappsample.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.security.core.Authentication;
@@ -37,6 +31,8 @@ public class OrderController {
     private ConversionService convertionService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private OrderListService orderListService;
 
 
 
@@ -73,24 +69,37 @@ public class OrderController {
     }
 
 
-    @PostMapping("/user/order")
+    @PostMapping("/user/order/")
     public String saveOrder(@RequestParam(value="address") Integer address, Model model, Authentication authentication, HttpSession session){
         List<Release> releases = getSoldReleases(session);
         double sum = 0.0;
-        for (Release release : releases)
-        {
-            sum = sum + release.getPrice();
-        }
         User user = (User) authentication.getPrincipal();
         Date date = new Date();
         UserAddress userAddress = userAddressServise.getUserAddress(address);
         Order order = new Order();
+
+
+
+        for (Release release : releases)
+        {
+            sum = sum + release.getPrice();
+
+        }
+
         order.setUser(user);
         order.setDateOrder(date);
         order.setSumOrder(sum);
-        //order.setUserAddress(userAddress);
+        order.setUserAddress(userAddress);
         orderService.saveOrder(order);
 
+
+        for (Release release : releases)
+        {
+            OrderList orderList = new OrderList();
+            orderList.setOrder(order);
+            orderList.setRelease(release);
+            orderListService.saveOrderList(orderList);
+        }
 
         return "redirect:/user/pay";
     }

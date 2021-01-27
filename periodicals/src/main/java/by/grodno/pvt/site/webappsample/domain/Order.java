@@ -27,8 +27,7 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "order")
-    @JoinColumn(name = "address_id")
+    @OneToOne(cascade = CascadeType.ALL)
     private UserAddress userAddress;
 
     @Column
@@ -91,4 +90,19 @@ public class Order {
     }
 
 
+    public UserAddress getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(UserAddress userAddress) {
+        this.userAddress = userAddress;
+    }
+
+    public List<OrderList> getOrderLists() {
+        return orderLists;
+    }
+
+    public void setOrderLists(List<OrderList> orderLists) {
+        this.orderLists = orderLists;
+    }
 }
