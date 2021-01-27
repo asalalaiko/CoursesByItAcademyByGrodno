@@ -40,9 +40,15 @@ public class Order {
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)
     private List<OrderList> orderLists = new ArrayList<>();
 
+    @Column
+    private Double sumOrder;
+
+
     public Order(){
 
     }
+
+
 
     public Integer getId() {
         return id;
@@ -76,15 +82,13 @@ public class Order {
         this.statePlayment = statePlayment;
     }
 
-    public Integer getSumOrder() {
+    public Double getSumOrder() {
         return sumOrder;
     }
 
-    public void setSumOrder(Integer sumOrder) {
+    public void setSumOrder(Double sumOrder) {
         this.sumOrder = sumOrder;
     }
 
-    @Column
-    private Integer sumOrder;
 
 }
