@@ -116,4 +116,15 @@ public class OrderController {
 
         return "/user/orders";
     }
+
+
+    @GetMapping("/user/order/delete/")
+    public String deleteUserOrder(@RequestParam(value="id") Integer id) {
+        Order order = new Order();
+        order = orderService.getOrder(id);
+        orderListService.deleteByOrder(order);
+        orderService.deleteOrder(id);
+        return "redirect:/user/orders";
+    }
+
 }

@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -30,9 +32,13 @@ public class UserAddress {
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "user")
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "order_id")
     private Order order;
 
+
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "userAddress", fetch = FetchType.LAZY)
+    private List<Order> orders = new ArrayList<>();
 
     public User getUser() {
         return user;

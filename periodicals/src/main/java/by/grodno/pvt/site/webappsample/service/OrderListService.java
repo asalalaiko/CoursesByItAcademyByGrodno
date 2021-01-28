@@ -1,6 +1,7 @@
 package by.grodno.pvt.site.webappsample.service;
 
 
+import by.grodno.pvt.site.webappsample.domain.Order;
 import by.grodno.pvt.site.webappsample.domain.OrderList;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public interface OrderListService {
     void saveOrderList(OrderList orderList);
 
     void deleteOrderList(Integer id);
+
+    void deleteByOrder(Order order);
 
 
 }

@@ -27,7 +27,9 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
+    @JoinColumn(name = "user_address_id")
     private UserAddress userAddress;
 
     @Column

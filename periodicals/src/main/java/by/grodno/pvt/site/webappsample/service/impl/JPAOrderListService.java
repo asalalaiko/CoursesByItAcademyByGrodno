@@ -43,4 +43,7 @@ public class JPAOrderListService implements OrderListService {
     public void deleteOrderList(Integer id) {
         orderListRepo.deleteById(id);
     }
+
+    @Override
+    public void deleteByOrder(Order order) {orderListRepo.deleteByOrder(order);}
 }

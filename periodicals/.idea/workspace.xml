@@ -4,9 +4,13 @@
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/UserAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderListRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderListRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/orders.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +175,7 @@
       <workItem from="1611690612378" duration="5895000" />
       <workItem from="1611730628071" duration="15182000" />
       <workItem from="1611766979131" duration="9550000" />
-      <workItem from="1611855874707" duration="4629000" />
+      <workItem from="1611855874707" duration="11503000" />
     </task>
     <servers />
   </component>
@@ -190,5 +194,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
