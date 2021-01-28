@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="card-deck">
+            <div class="row" th:each="order : ${order}">
+                <div class="col-sm-3">
+                       <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"> <div th:text="'Order #'+${order.id}" /></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><div th:text="' from '+${#dates.format(order.dateOrder, 'dd-MM-yyyy')}"/></h6>
+                                <p class="card-text"><div th:text="'awaiting payment '+${order.sumOrder}+'$'"/></p>
+<!--                                <a th:href="@{'/user/addressEdit/?id='+${address.id}}"class="card-link">Edit</a>-->
+<!--                                <a th:href="@{'/user/address/delete/?id='+${address.id}}"class="card-link">Delete</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+</div>
+
+<br />
+<br />
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>

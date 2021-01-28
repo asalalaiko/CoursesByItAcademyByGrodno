@@ -4,7 +4,9 @@
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAOrderService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +16,20 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,21 +80,21 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="by.grodno.pvt.site.webappsample.service.impl" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\user" />
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\java\by\grodno\pvt\site\webappsample" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\admin" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
-      <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="by.grodno.pvt.site.webappsample.service" />
       <recent name="by.grodno.pvt.site.webappsample.service.impl" />
       <recent name="by.grodno.pvt.site.webappsample.controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\admin" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\user" />
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
+      <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\java\by\grodno\pvt\site\webappsample" />
       <recent name="C:\Users\Alex\Desktop\JavaProject\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates\blocks" />
+      <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -155,6 +171,7 @@
       <workItem from="1611690612378" duration="5895000" />
       <workItem from="1611730628071" duration="15182000" />
       <workItem from="1611766979131" duration="9550000" />
+      <workItem from="1611855874707" duration="4629000" />
     </task>
     <servers />
   </component>

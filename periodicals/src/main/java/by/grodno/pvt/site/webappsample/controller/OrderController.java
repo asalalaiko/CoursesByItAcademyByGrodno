@@ -107,4 +107,13 @@ public class OrderController {
     }
 
 
+    @GetMapping("/user/orders")
+    public String getListOrdersUser (Model model, Authentication authentication, HttpSession session) {
+
+        User user = (User) authentication.getPrincipal();
+        model.addAttribute("order", orderService.getUserOrdersByUser(user));
+
+
+        return "/user/orders";
+    }
 }

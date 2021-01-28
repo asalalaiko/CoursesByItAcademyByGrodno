@@ -1,6 +1,8 @@
 package by.grodno.pvt.site.webappsample.service.impl;
 
 import by.grodno.pvt.site.webappsample.domain.Order;
+import by.grodno.pvt.site.webappsample.domain.User;
+import by.grodno.pvt.site.webappsample.domain.UserAddress;
 import by.grodno.pvt.site.webappsample.repo.OrderRepo;
 import by.grodno.pvt.site.webappsample.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,4 +43,10 @@ public class JPAOrderService implements OrderService {
     public void deleteOrder(Integer id) {
         orderRepo.deleteById(id);
     }
-}
+
+    @Override
+    public List<Order> getUserOrdersByUser(User user) {
+        return orderRepo.findByUser(user);
+    }
+
+    }
