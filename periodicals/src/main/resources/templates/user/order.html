@@ -24,21 +24,6 @@
 </ul>
 
 
-<!--            <form th:action="@{/user/order/}" method="post">-->
-<!--        <select  name="address" >-->
-<!--            <option selected="selected" disabled>Open this to select a shipping address</option>-->
-<!--            <option-->
-<!--                    th:each="address : ${address}"-->
-<!--                    th:value="${address.id}" th:text="${address.addressee}+' | '+${address.phoneNumber}+' | '+${address.address}"-->
-<!--            >-->
-<!--            </option>-->
-<!--        </select>-->
-<!--        &lt;!&ndash;                <a class="btn btn-outline-success" th:href="@{/user/addressNew}">Add</a>&ndash;&gt;-->
-<!--        <button type="submit">Edit</button>-->
-<!--    </form>-->
-
-
-
 <div class="container">
     <div class="col-md-6 offset-md-3">
         <form class="was-validated form-inline" th:action="@{/user/order/}" method="post">

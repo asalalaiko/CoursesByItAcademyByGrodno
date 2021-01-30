@@ -44,6 +44,16 @@ public class Order {
     @Column
     private Double sumOrder;
 
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)
+    private List<Payment> payments = new ArrayList<>();
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
+    }
 
     public Order(){
 
