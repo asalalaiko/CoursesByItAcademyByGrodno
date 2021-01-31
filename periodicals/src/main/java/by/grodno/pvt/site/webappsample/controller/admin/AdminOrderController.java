@@ -74,7 +74,7 @@ public class AdminOrderController {
 
         Order order = new Order();
         order = orderService.getOrder(id);
-        order.setStateShipment(true);
+        order.setStatePayment(true);
         orderService.saveOrder(order);
 
 //        Payment payment1 = new Payment();

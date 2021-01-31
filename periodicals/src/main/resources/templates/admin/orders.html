@@ -30,8 +30,14 @@
                 <div th:if="${order.statePayment == false}">
                     <td>awaiting payment</td>
                 </div>
+                <div th:if="${order.statePayment == true}">
+                    <td>payment</td>
+                </div>
                 <div th:if="${order.stateShipment == false}">
                     <td>awaiting shipment</td>
+                </div>
+                <div th:if="${order.stateShipment == true}">
+                    <td>shipment</td>
                 </div>
 
 
