@@ -27,7 +27,7 @@
 
                                 <div  th:if="${order.statePlayment == false}">
                                     <p class="card-text" ><div th:text="'awaiting payment '+${order.sumOrder}+'$'"/></p>
-                                    <a th:href="@{'/user/orderEdit/?id='+${order.id}}"class="card-link">Edit</a>
+                                    <a th:href="@{'/user/pay/?order='+${order.id}}"class="card-link">Pay</a>
                                     <a th:href="@{'/user/order/delete/?id='+${order.id}}"class="card-link">Delete</a>
                                 </div>
                                 <div th:unless="${order.statePlayment == false}">

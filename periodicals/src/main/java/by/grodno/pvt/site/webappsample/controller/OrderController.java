@@ -103,7 +103,8 @@ public class OrderController {
 
         getSoldReleases(session).clear();
 
-        return "redirect:/user/pay";
+
+        return "redirect:/user/pay/?order="+order.getId();
     }
 
 

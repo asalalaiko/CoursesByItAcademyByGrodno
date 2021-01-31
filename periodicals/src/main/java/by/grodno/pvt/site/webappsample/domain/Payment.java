@@ -28,7 +28,7 @@ public class Payment {
     @Column
     private String transaction;
 
-    Payment(){
+    public Payment(){
 
     }
 
