@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head>
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+<br />
+<br />
+
+
+<div class="container">
+    <div class="row justify-content-center  p-1"  th:text="'Order #'+${order.id} + ' from ' + ${#dates.format(order.dateOrder, 'dd-MM-yyyy')}"  />
+    <div class="row justify-content-center  p-1" th:text="'To address :'+${order.userAddress.address}" />
+    <div th:if="${order.statePayment == false}">
+        <div class="row justify-content-center p-3 mb-2 bg-danger text-white p-1">Order not paid!!!</div>
+    </div>
+    <div th:if="${order.statePayment == true}">
+        <a class="btn btn-danger"
+           th:href="@{'/admin/shiping/?order='+${order.id}}">Shiping</a> </td>
+    </div>
+
+</div>
+
+<br />
+<br />
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>

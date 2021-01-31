@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head>
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+<br />
+<br />
+
+
+<div class="container">
+    <div class="row justify-content-center  p-1"  th:text="'Order #'+${order.id} + ' from ' + ${#dates.format(order.dateOrder, 'dd-MM-yyyy')}"  />
+    <div class="row justify-content-center  p-1" th:text="'For the amount :'+${order.sumOrder}" />
+    <div th:if="${order.statePayment == true}">
+        <div class="row justify-content-center p-3 mb-2 bg-danger text-white p-1">Order paid!!!</div>
+    </div>
+    <div th:if="${order.statePayment == true}">
+        <a class="btn btn-danger"
+           th:href="@{'/admin/pay/?order='+${order.id}}">Pay!</a> </td>
+    </div>
+    <div class="row justify-content-center  p-1">
+        <form th:action="@{/admin/pay}" method="post">
+            <input type="hidden" name="order" th:value="${order.id}" />
+            <select name="payment">
+                <option selected="selected" disabled>Select payment</option>
+                <option
+                        th:each="payment : ${payment}"
+                        th:value="${payment.id}" th:text="${payment.transaction}"
+                >
+                </option>
+            </select>
+            <div class="row justify-content-center  p-1">
+            <button class="btn btn-outline-success" type="submit">Payment</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<br />
+<br />
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>

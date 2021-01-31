@@ -28,6 +28,10 @@ public class Payment {
     @Column
     private String transaction;
 
+    @Column
+    private Double sum;
+
+
     public Payment(){
 
     }
@@ -64,6 +68,13 @@ public class Payment {
         this.transaction = transaction;
     }
 
+    public Double getSum() {
+        return sum;
+    }
+
+    public void setSum(Double sum) {
+        this.sum = sum;
+    }
 
 
 

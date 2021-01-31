@@ -36,7 +36,18 @@ public class Order {
     private Date dateOrder;
 
     @Column
-    private Boolean statePlayment = false;;
+    private Boolean statePayment = false;
+
+    public Boolean getStateShipment() {
+        return stateShipment;
+    }
+
+    public void setStateShipment(Boolean stateShipment) {
+        this.stateShipment = stateShipment;
+    }
+
+    @Column
+    private Boolean stateShipment = false;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "order", fetch = FetchType.LAZY)
     private List<OrderList> orderLists = new ArrayList<>();
@@ -85,12 +96,12 @@ public class Order {
         this.dateOrder = dateOrder;
     }
 
-    public Boolean getStatePlayment() {
-        return statePlayment;
+    public Boolean getStatePayment() {
+        return statePayment;
     }
 
-    public void setStatePlayment(Boolean statePlayment) {
-        this.statePlayment = statePlayment;
+    public void setStatePayment(Boolean statePayment) {
+        this.statePayment = statePayment;
     }
 
     public Double getSumOrder() {

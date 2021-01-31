@@ -16,18 +16,30 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th scope="col">Order #</th>
-                <th scope="col">Date</th>
-                <th scope="col">Status</th>
+                <th scope="col" width="8%">Order #</th>
+                <th scope="col" width="18%">Date</th>
+                <th scope="col">Status payment</th>
+                <th scope="col">Status shipment</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="order : ${order}">
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row" th:text="${order.id}" />
+                <td th:text="${#dates.format(order.dateOrder, 'dd-MM-yyyy')}">Mark</td>
+                <div th:if="${order.statePayment == false}">
+                    <td>awaiting payment</td>
+                </div>
+                <div th:if="${order.stateShipment == false}">
+                    <td>awaiting shipment</td>
+                </div>
+
+
+                <td>
+                    <a th:if="${order.statePayment == false}" th:href="@{'/admin/pay/?order='+${order.id}}"class="card-link">Pay</a>
+                    <a th:if="${order.stateShipment == false}" th:href="@{'/admin/ship/?order='+${order.id}}"class="card-link">Ship</a>
+                    <a th:href="@{'/user/order/delete/?id='+${order.id}}"class="card-link">Delete</a>
+                </td>
             </tr>
 
             </tbody>
@@ -36,37 +48,6 @@
     </div>
 </div>
 
-
-
-<div class="container">
-    <div class="row">
-        <div class="card-deck">
-            <div th:each="order : ${order}">
-                <div class="col-sm-3">
-                       <div class="card" style="width: 18rem; height: 11rem;">
-                            <div class="card-body">
-                                <h5 class="card-title"> <div th:text="'Order #'+${order.id}" /></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><div th:text="' from '+${#dates.format(order.dateOrder, 'dd-MM-yyyy')}"/></h6>
-
-
-
-                                <div  th:if="${order.statePlayment == false}">
-                                    <p class="card-text" ><div th:text="'awaiting payment '+${order.sumOrder}+'$'"/></p>
-                                    <a th:href="@{'/admin/orderPayment/?id='+${order.id}}"class="card-link">Payment</a>
-                                    <a th:href="@{'/user/order/delete/?id='+${order.id}}"class="card-link">Delete</a>
-                                </div>
-                                <div th:unless="${order.statePlayment == false}">
-                                    <p class="card-text" >paid, expect delivery</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-
-
-</div>
 
 <br />
 <br />

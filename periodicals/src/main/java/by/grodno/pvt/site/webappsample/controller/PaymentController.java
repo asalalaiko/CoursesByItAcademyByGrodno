@@ -41,15 +41,16 @@ public class PaymentController {
                            @RequestParam String cardno,
                            @RequestParam String cvcpwd,
                            @RequestParam String exp,
-                           @RequestParam String sum) {
+                           @RequestParam Double sum) {
 
         Payment payment = new Payment();
         Date date = new Date();
-        String transaction =  "Payment: " +holdername +"|"+ cardno +"|"+ cvcpwd +"|"+ exp +"summa:" + sum;
+        String transaction =  "Order - "+ orderId + " | Payment: " +holdername +" | "+ cardno +" | "+ cvcpwd +" | "+ exp +"summa:" + sum;
 
 
         payment.setDatePay(date);
         payment.setTransaction(transaction);
+        payment.setSum(sum);
         paymentService.savePayment(payment);
 
         return "redirect:/";

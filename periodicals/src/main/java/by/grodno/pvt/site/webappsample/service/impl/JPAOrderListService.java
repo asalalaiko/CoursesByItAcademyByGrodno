@@ -2,6 +2,7 @@ package by.grodno.pvt.site.webappsample.service.impl;
 
 import by.grodno.pvt.site.webappsample.domain.Order;
 import by.grodno.pvt.site.webappsample.domain.OrderList;
+import by.grodno.pvt.site.webappsample.domain.Release;
 import by.grodno.pvt.site.webappsample.repo.OrderListRepo;
 import by.grodno.pvt.site.webappsample.service.OrderListService;
 import by.grodno.pvt.site.webappsample.service.OrderService;
@@ -17,6 +18,8 @@ public class JPAOrderListService implements OrderListService {
     @Autowired
     private OrderListRepo orderListRepo;
 
+    @Override
+    public List<Release> getReleasesByOrder(Order order) {return  orderListRepo.findByOrder(order);}
 
     @Override
     public List<OrderList> getOrderLists() {
@@ -46,4 +49,6 @@ public class JPAOrderListService implements OrderListService {
 
     @Override
     public void deleteByOrder(Order order) {orderListRepo.deleteByOrder(order);}
+
+
 }
