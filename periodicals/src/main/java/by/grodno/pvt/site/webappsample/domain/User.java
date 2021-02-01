@@ -2,11 +2,13 @@ package by.grodno.pvt.site.webappsample.domain;
 
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
@@ -19,11 +21,13 @@ public class User implements UserDetails {
     private Integer id;
 
     @Column(unique = true)
+    @Email
     private String username;
 
 
     @NotNull
     @Column(nullable = false)
+    @Length(min = 5, max = 20)
     private String password;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "user", fetch = FetchType.LAZY)
