@@ -60,7 +60,7 @@ public class User implements UserDetails {
         this.activationCode = activationCode;
     }
 
-    private Boolean active;
+    private Boolean active = false;
 
     private String activationCode;
 
