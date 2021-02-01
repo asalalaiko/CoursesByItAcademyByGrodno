@@ -5,6 +5,7 @@ import by.grodno.pvt.site.webappsample.domain.User;
 import by.grodno.pvt.site.webappsample.domain.UserRole;
 import by.grodno.pvt.site.webappsample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,9 @@ import java.util.Collections;
 public class RegistrationController {
     @Autowired
     private UserService service;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     @GetMapping("/activate/{id}")
     String activation(@PathVariable Integer id) {
@@ -46,6 +50,8 @@ public class RegistrationController {
             return "registerView";
         }
         user.setRoles(UserRole.USER);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         service.saveUser(user);
 
         return "redirect:/login";

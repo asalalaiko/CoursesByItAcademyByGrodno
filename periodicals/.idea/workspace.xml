@@ -176,6 +176,7 @@
       <workItem from="1611912072859" duration="2999000" />
       <workItem from="1612023360430" duration="44776000" />
       <workItem from="1612133030140" duration="622000" />
+      <workItem from="1612159128459" duration="2917000" />
     </task>
     <servers />
   </component>
@@ -194,16 +195,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminOrderController.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
