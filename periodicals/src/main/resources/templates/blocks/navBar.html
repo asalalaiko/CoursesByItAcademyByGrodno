@@ -23,7 +23,7 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/admin/release}">Release</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/product}">Product</a>
-						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/publisher}">Publisher</a>
+						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/admin/publisher}">Publisher</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/admin/category}">Categories</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/admin/frequency}">Frequency</a>
 						<a sec:authorize="hasAuthority('ADMIN')" class="dropdown-item" th:href="@{/admin/language}">Language</a>
