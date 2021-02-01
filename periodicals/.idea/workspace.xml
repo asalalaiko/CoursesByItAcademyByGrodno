@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/publisher.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/PublisherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/PublisherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ControllerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ControllerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Frequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Frequency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/language.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/language.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/navBar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/publisher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Frequency.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Frequency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Publisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/Publisher.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +191,7 @@
       <workItem from="1612023360430" duration="44776000" />
       <workItem from="1612133030140" duration="622000" />
       <workItem from="1612159128459" duration="13069000" />
-      <workItem from="1612201990504" duration="10804000" />
+      <workItem from="1612201990504" duration="16453000" />
     </task>
     <servers />
   </component>

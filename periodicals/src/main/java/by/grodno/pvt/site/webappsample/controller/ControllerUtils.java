@@ -1,4 +1,5 @@
-package by.pvt.spring.webproject.controllers;
+package by.grodno.pvt.site.webappsample.controller;
+
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

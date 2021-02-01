@@ -20,7 +20,7 @@ public class Publisher {
     @Column(nullable = false)
     private String contact;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "publisher")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "publisher", fetch = FetchType.LAZY)
     private List<Product> products;
 
     public Publisher(){}

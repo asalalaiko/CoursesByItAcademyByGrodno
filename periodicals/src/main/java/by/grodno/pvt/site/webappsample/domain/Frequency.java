@@ -4,6 +4,7 @@ package by.grodno.pvt.site.webappsample.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,7 +16,11 @@ public class Frequency {
     @Column(nullable = false)
     private String name;
 
-public Frequency(){
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "frequency", fetch = FetchType.LAZY)
+    private List<Product> products;
+
+
+    public Frequency(){
 
 }
 

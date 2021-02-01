@@ -68,7 +68,7 @@ public class RegistrationController {
                 model.addAttribute("captchaError", "Fill captcha");
             }
             if (bindingResult.hasErrors()) {
-            Map<String, String> errors = by.pvt.spring.webproject.controllers.ControllerUtils.getErrors(bindingResult);
+            Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errors);
 
             model.addAttribute("User", user);

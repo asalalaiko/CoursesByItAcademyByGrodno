@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<th:block th:insert="blocks/header.html :: css" />
+<body>
+<th:block th:insert="blocks/navBar.html :: navBar" />
+
+<div class="container">
+    <div class="row justify-content-center  p-1">
+        <div th:if="${#httpServletRequest.requestURI == '/admin/product/edit'}">
+            <form th:action="@{/admin/product/edit}" method="post">
+                <div class="form-control mb-2 mr-sm-2" > [[${product.id}]]</div>
+                <input class="form-control mb-2 mr-sm-2" type="hidden" name="productId" th:value="${product.id}" />
+                <input class="form-control mb-2 mr-sm-2" type="text" th:value="${product.name}"  name="productName" />
+                <input class="form-control mb-2 mr-sm-2" type="text" th:value="${product.isin}"  name="isin" />
+                <input class="form-control mb-2 mr-sm-2" type="date" th:value="${product.dateFirstAvailable}"  name="dateFirstAvailable" />
+                <select class="form-control mb-2 mr-sm-2" name="publisher">
+                    <option selected="selected" disabled>Select publisher</option>
+                    <option
+                            th:each="publisher : ${publisher}"
+                            th:value="${publisher.id}" th:text="${publisher.name}"
+                            >
+                    </option>
+                </select>
+                <select class="form-control mb-2 mr-sm-2" name="category">
+                    <option selected="selected" disabled>Select category</option>
+                    <option
+                            th:each="category : ${category}"
+                            th:value="${category.id}" th:text="${category.name}"
+                    >
+                    </option>
+                </select>
+                <select class="form-control mb-2 mr-sm-2" name="frequency">
+                    <option selected="selected" disabled>Select frequency</option>
+                    <option
+                            th:each="frequency : ${frequency}"
+                            th:value="${frequency.id}" th:text="${frequency.name}"
+                    >
+                    </option>
+                </select>
+                <select class="form-control mb-2 mr-sm-2" name="language">
+                    <option selected="selected" disabled>Select language</option>
+                    <option
+                            th:each="language : ${language}"
+                            th:value="${language.id}" th:text="${language.name}"
+                    >
+                    </option>
+                </select>
+                <button class="btn btn-success mb-2" type="submit">Edit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center  p-1">
+        <div th:if="${#httpServletRequest.requestURI == '/admin/product'}">
+            <form class="form-inline" th:action="@{/admin/product}" method="post">
+                <input class="form-control mb-2 mr-sm-2" type="text" name="productName" placeholder="Product name" />
+                <input class="form-control mb-2 mr-sm-2" type="text" name="isin" placeholder="Product isin" />
+                <input class="form-control mb-2 mr-sm-2" type="date" name="dateFirstAvailable" placeholder="Product date available" />
+                <select class="form-control mb-2 mr-sm-2" name="publisher">
+                <option selected="selected" disabled>Select publisher</option>
+                <option
+                        th:each="publisher : ${publisher}"
+                        th:value="${publisher.id}" th:text="${publisher.name}" >
+                </option>
+            </select>
+                <select class="form-control mb-2 mr-sm-2" name="category">
+                    <option selected="selected" disabled>Select category</option>
+                    <option
+                            th:each="category : ${category}"
+                            th:value="${category.id}" th:text="${category.name}" >
+                    </option>
+                </select>
+                <select class="form-control mb-2 mr-sm-2" name="frequency">
+                    <option selected="selected" disabled>Select frequency</option>
+                    <option
+                            th:each="frequency : ${frequency}"
+                            th:value="${frequency.id}" th:text="${frequency.name}" >
+                    </option>
+                </select>
+                <select class="form-control mb-2 mr-sm-2" name="language">
+                    <option selected="selected" disabled>Select language</option>
+                    <option
+                            th:each="language : ${language}"
+                            th:value="${language.id}" th:text="${language.name}" >
+                    </option>
+                </select>
+                <button class="btn btn-success mb-2" type="submit">Add</button>
+            </form>
+        </div>
+
+        <div class="row justify-content-center  p-1">
+                <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name Product</th>
+                    <th scope="col">ISBN Product</th>
+                    <th scope="col">Available date</th>
+                    <th scope="col">Product publisher</th>
+                    <th scope="col">Product category</th>
+                    <th scope="col">Product output frequency</th>
+                    <th scope="col">Product language</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+                </thead>
+
+                <tr th:each="product : ${product}">
+
+                    <td th:text="${product.id}" />
+                    <td th:text="${product.name}" />
+                    <td th:text="${product.isin}" />
+                    <td th:text="${#dates.format(product.dateFirstAvailable, 'dd-MM-yyyy')}" />
+                    <td> <a th:href="@{'/publisher/id='+${product.publisher.id}}"th:text="${product.publisher.name}" /> </td>
+                    <td> <a th:href="@{'/category/id='+${product.category.id}}"th:text="${product.category.name}" /> </td>
+                    <td> <a th:href="@{'/category/id='+${product.frequency.id}}"th:text="${product.frequency.name}" /> </td>
+                    <td> <a th:href="@{'/category/id='+${product.language.id}}"th:text="${product.language.name}" /> </td>
+
+                    <td>
+                        <a class="btn btn-danger"
+                           th:href="@{'/admin/product/delete?id='+${product.id}}">Delete</a>
+                        <a class="btn btn-success"
+                           th:href="@{'/admin/product/edit?productId='+${product.id}}">Edit</a> </td>
+
+                </tr>
+            </table>
+        </div>
+</div>
+
+
+<th:block th:insert="blocks/scripts.html :: js" />
+</body>
+</html>
+

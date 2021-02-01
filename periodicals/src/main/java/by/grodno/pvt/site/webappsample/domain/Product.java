@@ -36,6 +36,19 @@ public class Product {
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "frequency_id")
+    private Frequency frequency;
+
+    @ManyToOne
+    @JoinColumn(name = "language_id")
+    private Language language;
+
     public Product() {}
 
    public Product(String name, String isin, Date dateFirstAvailable) {
@@ -97,5 +110,29 @@ public class Product {
 
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Frequency getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(Frequency frequency) {
+        this.frequency = frequency;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 }

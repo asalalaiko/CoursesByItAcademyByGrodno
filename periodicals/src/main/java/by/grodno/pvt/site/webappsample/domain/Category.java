@@ -4,6 +4,7 @@ package by.grodno.pvt.site.webappsample.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,6 +16,9 @@ public class Category {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", fetch = FetchType.LAZY)
+    private List<Product> products;
 
     public Category(){
 
