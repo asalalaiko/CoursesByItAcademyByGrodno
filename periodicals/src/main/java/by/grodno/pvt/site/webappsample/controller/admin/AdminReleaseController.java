@@ -42,13 +42,13 @@ public class AdminReleaseController {
 
     }
     @PostMapping("/admin/release")
-    public String addRelease(@RequestParam String name,
+    public String addRelease(@RequestParam String releaseName,
                              @RequestParam String description,
                              @RequestParam Double price,
                              Map<String, Object> model,
                              Product product,
                              @RequestParam("file") MultipartFile file) throws IOException {
-        Release release = new Release(name, description, price);
+        Release release = new Release(releaseName, description, price);
         release.setProduct(product);
 
         if (file != null && !file.getOriginalFilename().isEmpty()) {
@@ -65,6 +65,7 @@ public class AdminReleaseController {
 
             release.setFilename(resultFilename);
         }
+        release.setProduct(product);
         releaseService.saveRelease(release);
 
         return "redirect:/admin/release";
@@ -79,8 +80,11 @@ public class AdminReleaseController {
 
 
     @GetMapping("/admin/release/edit")
-    public String getRelease(@RequestParam(value="id") Integer id, Model model){
-        Release release = releaseRepo.getOne(id);
+    public String getRelease(@RequestParam(value="releaseId") Integer releaseId, Model model){
+
+        model.addAttribute("product", productService.getProducts());
+
+        Release release = releaseRepo.getOne(releaseId);
         model.addAttribute("release", release);
 
         return "/admin/release";
@@ -88,14 +92,18 @@ public class AdminReleaseController {
     }
 
     @PostMapping("/admin/release/edit")
-    public String editRelease(@RequestParam (value="id") Integer id,
-                              @RequestParam String name,
+    public String editRelease(@RequestParam (value="releaseId") Integer releaseId,
+                              @RequestParam String releaseName,
                               @RequestParam String description,
-                              @RequestParam Double price) {
-        Release release = releaseRepo.getOne(id);
-        release.setName(name);
+                              @RequestParam Double price,
+                              Product product) {
+        Release release = releaseRepo.getOne(releaseId);
+
+        release.setName(releaseName);
         release.setDescription(description);
         release.setPrice(price);
+        release.setProduct(product);
+
         releaseService.saveRelease(release);
         return "redirect:/admin/release";
     }

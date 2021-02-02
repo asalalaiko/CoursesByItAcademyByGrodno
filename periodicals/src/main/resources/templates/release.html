@@ -18,7 +18,7 @@
             <img th:src="@{'/img/release/'+${release.filename}}" width="480"
                  height="640" alt=""></td></div>
         <div class="col-6" style="background-color: white;">
-        <h1>Product</h1>
+        <h1 th:text="${release.product.name}" />
             <h2 th:text="${release.name}"/><br>
             <h2 th:text="${release.description}" />
             Buy this issue:<br>

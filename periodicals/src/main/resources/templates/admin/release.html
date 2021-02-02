@@ -1,5 +1,7 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="${title}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -17,10 +19,19 @@
         <div th:if="${#httpServletRequest.requestURI == '/admin/release/edit'}">
             <form class="form-inline" th:action="@{/admin/release/edit}" method="post">
                 <div class="form-control mb-2 mr-sm-2" >[[${release.id}]]</div>
-                <input class="form-control mb-2 mr-sm-2"type="hidden" name="id" th:value="${release.id}" />
-                <input class="form-control mb-2 mr-sm-2"type="text" th:value="${release.name}"  name="name" /></p>
+                <input class="form-control mb-2 mr-sm-2"type="hidden" name="releaseId" th:value="${release.id}" />
+                <input class="form-control mb-2 mr-sm-2"type="text" th:value="${release.name}"  name="releaseName" /></p>
                 <textarea class="form-control mb-2 mr-sm-2" rows="3" cols="100" maxlength="200" name="description">[[${release.description}]]</textarea></p>
                 <input class="form-control mb-2 mr-sm-2" type="text" name="price" th:value="${release.price}" /></p>
+
+                <select class="form-control mb-2 mr-sm-2" name="product">
+                    <option selected="selected" disabled>Select product</option>
+                    <option
+                            th:each="product : ${product}"
+                            th:value="${product.id}" th:text="${product.name}"
+                    >
+                    </option>
+                </select>
                 <button class="btn btn-success mb-2" type="submit">Edit</button>
             </form>
         </div>
@@ -31,9 +42,17 @@
         <div th:if="${#httpServletRequest.requestURI == '/admin/release'}">
             <form  class="form-inline" th:action="@{/admin/release}"  enctype="multipart/form-data" method="post">
                 <input class="form-control mb-2 mr-sm-2" type="file" name="file" /></p>
-                <input class="form-control mb-2 mr-sm-2" type="text" name="name" placeholder="Release" /></p>
+                <input class="form-control mb-2 mr-sm-2" type="text" name="releaseName" placeholder="Release" /></p>
                 <textarea class="form-control mb-2 mr-sm-2" rows="3" cols="100" maxlength="200" name="description" placeholder="In this issue"></textarea></p>
                 <input class="form-control mb-2 mr-sm-2" type="text" name="price" placeholder="Price" /></p>
+                <select class="form-control mb-2 mr-sm-2" name="product">
+                    <option selected="selected" disabled>Select product</option>
+                    <option
+                            th:each="product : ${product}"
+                            th:value="${product.id}" th:text="${product.name}"
+                    >
+                    </option>
+                </select>
                 <button class="btn btn-success mb-2" type="submit">Add</button>
             </form>
         </div>
@@ -66,7 +85,7 @@
                         <a class="btn btn-danger"
                            th:href="@{'/admin/release/delete?id='+${release.id}}">Delete</a>
                         <a class="btn btn-success"
-                           th:href="@{'/admin/release/edit?id='+${release.id}}">Edit</a> </td>
+                           th:href="@{'/admin/release/edit?releaseId='+${release.id}}">Edit</a> </td>
 
                 </tr>
             </table>

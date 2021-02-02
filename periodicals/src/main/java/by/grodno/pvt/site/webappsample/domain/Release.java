@@ -1,6 +1,8 @@
 package by.grodno.pvt.site.webappsample.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -26,6 +28,7 @@ public class Release {
     private String filename;
 
     @ManyToOne()
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "product_id")
     private Product product;
 
@@ -99,6 +102,8 @@ public class Release {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+
 
 }
 

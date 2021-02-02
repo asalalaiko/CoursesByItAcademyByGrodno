@@ -1,9 +1,7 @@
 package by.grodno.pvt.site.webappsample.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -33,19 +31,23 @@ public class Product {
     private List<Release> releases;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "frequency_id")
     private Frequency frequency;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude @ToString.Exclude
     @JoinColumn(name = "language_id")
     private Language language;
 
@@ -135,4 +137,5 @@ public class Product {
     public void setLanguage(Language language) {
         this.language = language;
     }
+
 }
