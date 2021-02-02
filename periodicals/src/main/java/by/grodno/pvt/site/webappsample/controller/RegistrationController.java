@@ -27,7 +27,7 @@ public class RegistrationController {
     private final static String CAPTCHA_URL = "https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s";
 
     @Autowired
-    private UserService service;
+    private UserService userSevice;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Value("${recaptcha.secret}")
@@ -64,22 +64,31 @@ public class RegistrationController {
             CaptchaResponseDto response = restTemplate.postForObject(
                     url, Collections.emptyList(), CaptchaResponseDto.class);
 
-            if (!response.isSuccess()) {
-                model.addAttribute("captchaError", "Fill captcha");
-            }
-            if (bindingResult.hasErrors()) {
+
+        if (!response.isSuccess()) {
+            model.addAttribute("captchaError", "Fill captcha");
+        }
+
+
+
+        if (user.getPassword() != null ) {
+            model.addAttribute("passwordError", "Passwords are different!");
+        }
+
+        if (bindingResult.hasErrors() || !response.isSuccess()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
+
             model.mergeAttributes(errors);
 
-            model.addAttribute("User", user);
+            return "registerView";
+        }
+
+        if (!userSevice.addUser(user)) {
+            model.addAttribute("usernameError", "User exists!");
             return "registerView";
         }
 
 
-        user.setRoles(UserRole.USER);
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-        service.saveUser(user);
 
         return "redirect:/login";
     }

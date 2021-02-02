@@ -27,7 +27,7 @@ public class User implements UserDetails {
 
     @NotNull
     @Column(nullable = false)
-    @Length(min = 5, max = 20)
+    @Length(min = 5)
     private String password;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "user", fetch = FetchType.LAZY)
@@ -68,13 +68,7 @@ public class User implements UserDetails {
 
     }
 
-    public User(String username, String password, Boolean active, UserRole roles){
-        this.username = username;
-        this.password = password;
-        this.active = active;
-        this.roles = roles;
 
-    }
     @Override
     public boolean isAccountNonExpired() {
         return true;
