@@ -99,5 +99,6 @@ public class Release {
     public void setPrice(Double price) {
         this.price = price;
     }
+
 }
 

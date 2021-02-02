@@ -12,58 +12,68 @@
 <body>
 <th:block th:insert="blocks/navBar.html :: navBar" />
 
+<div class="container">
+    <div class="row justify-content-center  p-1">
+        <div th:if="${#httpServletRequest.requestURI == '/admin/release/edit'}">
+            <form class="form-inline" th:action="@{/admin/release/edit}" method="post">
+                <div class="form-control mb-2 mr-sm-2" >[[${release.id}]]</div>
+                <input class="form-control mb-2 mr-sm-2"type="hidden" name="id" th:value="${release.id}" />
+                <input class="form-control mb-2 mr-sm-2"type="text" th:value="${release.name}"  name="name" /></p>
+                <textarea class="form-control mb-2 mr-sm-2" rows="3" cols="100" maxlength="200" name="description">[[${release.description}]]</textarea></p>
+                <input class="form-control mb-2 mr-sm-2" type="text" name="price" th:value="${release.price}" /></p>
+                <button class="btn btn-success mb-2" type="submit">Edit</button>
+            </form>
+        </div>
+    </div>
 
-<div th:if="${#httpServletRequest.requestURI == '/admin/release/edit'}">
-    <form th:action="@{/admin/release/edit}" method="post">
-        [[${release.id}]]
-        <input type="hidden" name="id" th:value="${release.id}" />
-        <input type="text" th:value="${release.name}"  name="name" /></p>
-        <textarea rows="3" cols="40"  name="description">[[${release.description}]]</textarea></p>
-        <input type="text" name="price" th:value="${release.price}" /></p>
-        <button type="submit">Edit</button>
-    </form>
+
+    <div class="row justify-content-center  p-1">
+        <div th:if="${#httpServletRequest.requestURI == '/admin/release'}">
+            <form  class="form-inline" th:action="@{/admin/release}"  enctype="multipart/form-data" method="post">
+                <input class="form-control mb-2 mr-sm-2" type="file" name="file" /></p>
+                <input class="form-control mb-2 mr-sm-2" type="text" name="name" placeholder="Release" /></p>
+                <textarea class="form-control mb-2 mr-sm-2" rows="3" cols="100" maxlength="200" name="description" placeholder="In this issue"></textarea></p>
+                <input class="form-control mb-2 mr-sm-2" type="text" name="price" placeholder="Price" /></p>
+                <button class="btn btn-success mb-2" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center  p-1">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Img</th>
+                    <th scope="col">Name Release</th>
+                    <th scope="col">Description Release</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+
+                <tr th:each="release : ${release}">
+
+                    <td th:text="${release.id}" />
+                    <td><img th:src="@{'/img/release/'+${release.filename}}" width="80"
+                             height="100" alt=""></td>
+                    <td th:text="${release.name}" />
+                    <td th:text="${release.description}" />
+                    <td th:text="${release.price}"/>
+                    <td th:text="${release.product.name}" />
+                    <td>
+                        <a class="btn btn-danger"
+                           th:href="@{'/admin/release/delete?id='+${release.id}}">Delete</a>
+                        <a class="btn btn-success"
+                           th:href="@{'/admin/release/edit?id='+${release.id}}">Edit</a> </td>
+
+                </tr>
+            </table>
+        </div>
+
 </div>
 
-
-
-<div th:if="${#httpServletRequest.requestURI == '/admin/release'}">
-    <form th:action="@{/admin/release}"  enctype="multipart/form-data" method="post">
-        <input type="file" name="file" /></p>
-        <input type="text" name="name" placeholder="Release" /></p>
-        <textarea rows="3" cols="40"  name="description"></textarea></p>
-        <input type="text" name="price" placeholder="Price" /></p>
-        <button type="submit">Add</button>
-    </form>
-
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Img</th>
-            <th scope="col">Name Release</th>
-            <th scope="col">Description Release</th>
-            <th scope="col">Price</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-
-        <tr th:each="release : ${release}">
-
-            <td th:text="${release.id}" />
-            <td><img th:src="@{'/img/release/'+${release.filename}}" width="80"
-                     height="100" alt=""></td>
-            <td th:text="${release.name}" />
-            <td th:text="${release.description}" />
-            <td th:text="${release.price}"/>
-            <td>
-                <a class="btn btn-danger"
-                   th:href="@{'/admin/release/delete?id='+${release.id}}">Delete</a>
-                <a class="btn btn-danger"
-                   th:href="@{'/admin/release/edit?id='+${release.id}}">Edit</a> </td>
-
-        </tr>
-    </table>
-</div>
 <th:block th:insert="blocks/scripts.html :: js" />
 </body>
 </html>

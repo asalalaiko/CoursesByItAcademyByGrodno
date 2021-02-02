@@ -1,7 +1,9 @@
 package by.grodno.pvt.site.webappsample.controller.admin;
 
+import by.grodno.pvt.site.webappsample.domain.Product;
 import by.grodno.pvt.site.webappsample.domain.Release;
 import by.grodno.pvt.site.webappsample.repo.ReleaseRepo;
+import by.grodno.pvt.site.webappsample.service.ProductService;
 import by.grodno.pvt.site.webappsample.service.ReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +26,8 @@ public class AdminReleaseController {
     private ReleaseRepo releaseRepo;
     @Autowired
     private ReleaseService releaseService;
+    @Autowired
+    private ProductService productService;
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -31,7 +35,9 @@ public class AdminReleaseController {
 
     @GetMapping("/admin/release")
     public String getAllRelease(Model model){
-        model.addAttribute("release", releaseRepo.findAll());
+
+        model.addAttribute("release", releaseService.getReleases());
+        model.addAttribute("product", productService.getProducts());
         return "/admin/release";
 
     }
@@ -40,8 +46,10 @@ public class AdminReleaseController {
                              @RequestParam String description,
                              @RequestParam Double price,
                              Map<String, Object> model,
+                             Product product,
                              @RequestParam("file") MultipartFile file) throws IOException {
         Release release = new Release(name, description, price);
+        release.setProduct(product);
 
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
@@ -57,8 +65,7 @@ public class AdminReleaseController {
 
             release.setFilename(resultFilename);
         }
-
-        releaseRepo.save(release);
+        releaseService.saveRelease(release);
 
         return "redirect:/admin/release";
     }
