@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33748caa-5f6b-4b02-a680-8a9487e76195" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/webappsample_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/Release.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/release.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webappsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webappsample.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,6 +182,8 @@
       <workItem from="1612201990504" duration="19333000" />
       <workItem from="1612253141400" duration="15754000" />
       <workItem from="1612272986183" duration="2236000" />
+      <workItem from="1612293933884" duration="9590000" />
+      <workItem from="1612336538526" duration="879000" />
     </task>
     <servers />
   </component>
@@ -203,37 +208,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java</url>
-          <line>85</line>
+          <line>94</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/RegistrationController.java</url>
-          <line>87</line>
+          <line>96</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java</url>
-          <line>89</line>
+          <line>93</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java</url>
-          <line>99</line>
+          <line>107</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java</url>
-          <line>101</line>
+          <line>109</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java</url>
-          <line>103</line>
+          <line>111</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/controller/admin/AdminReleaseController.java</url>
-          <line>106</line>
+          <line>114</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

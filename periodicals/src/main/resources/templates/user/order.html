@@ -17,7 +17,7 @@
         <li class="media">
             <img class="mr-3" th:src="@{'/img/release/'+${release.filename}}" alt="" width="20" height="25">
             <div class="media-body">
-                <h7 class="mt-0 mb-1" th:text="${release.product}+' ('+${release.name}+') - '+${release.price}+'$'" />
+                <h7 class="mt-0 mb-1" th:text="${release.product.name}+' ('+${release.name}+') - '+${release.price}+'$'" />
             </div>
         </li>
     </div>
