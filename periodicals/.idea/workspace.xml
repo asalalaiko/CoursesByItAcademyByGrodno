@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/release.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/release.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webappsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webappsample.iml" afterDir="false" />
     </list>
@@ -183,7 +183,8 @@
       <workItem from="1612253141400" duration="15754000" />
       <workItem from="1612272986183" duration="2236000" />
       <workItem from="1612293933884" duration="9590000" />
-      <workItem from="1612336538526" duration="879000" />
+      <workItem from="1612336538526" duration="1696000" />
+      <workItem from="1612384732182" duration="3540000" />
     </task>
     <servers />
   </component>

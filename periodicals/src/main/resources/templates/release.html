@@ -20,14 +20,22 @@
         <div class="col-6" style="background-color: white;">
         <h1 th:text="${release.product.name}" />
             <h2 th:text="${release.name}"/><br>
-            <h2 th:text="${release.description}" />
-            Buy this issue:<br>
-            $ <th:block th:text="${release.price}"/>
-            <a class="btn btn btn-success"
-               th:href="@{'/release/buy?id='+${release.id}}">ADD TO CART</a>
-
-
-
+            <h7 th:text="${release.description}" />
+            <br>
+                <div>
+                    <b>Publisher: </b> <th:block th:text="${release.product.publisher.name} " />
+                    |
+                    <b> Category: </b> <th:block th:text="${release.product.category.name} " />
+                    |
+                    <b> Language: </b> <th:block th:text="${release.product.language.name} " />
+                    |
+                    <b> Frequency: </b> <th:block th:text="${release.product.frequency.name} " />
+                </div>
+                <br>
+                Buy this issue:<br>
+                $ <th:block th:text="${release.price}"/>
+                <a class="btn btn btn-success"
+                   th:href="@{'/release/buy?id='+${release.id}}">ADD TO CART</a>
         </div>
     </div>
 </div>
