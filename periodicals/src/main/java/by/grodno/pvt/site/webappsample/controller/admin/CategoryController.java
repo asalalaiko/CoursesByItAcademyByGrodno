@@ -15,8 +15,6 @@ import java.util.Map;
 public class CategoryController {
 
     @Autowired
-    private CategoryRepo categoryRepo;
-    @Autowired
     private CategoryService categoryService;
     @Autowired
     private ConversionService conversionService;
@@ -36,7 +34,8 @@ public class CategoryController {
     public String addCategory(@RequestParam String name, Map<String, Object> model) {
         Category category = new Category(name);
 
-        categoryRepo.save(category);
+        categoryService.saveCategory(category);
+
 
         return "redirect:/admin/category";
     }
@@ -44,14 +43,16 @@ public class CategoryController {
     @GetMapping("/admin/category/delete")
     public String deleteCategory(@RequestParam(value="id") Integer id){
 
-        categoryRepo.deleteById(id);
+        categoryService.deleteCategory(id);
+
         return "redirect:/admin/category";
     }
 
 
     @GetMapping("/admin/category/edit")
     public String getCategory(@RequestParam(value="id") Integer id, Model model){
-        Category category = categoryRepo.getOne(id);
+
+        Category category = categoryService.getCategory(id);
         model.addAttribute("category", category);
 
         return "/admin/category";
@@ -60,7 +61,7 @@ public class CategoryController {
 
     @PostMapping("/admin/category/edit")
     public String editCategory(@RequestParam (value="id") Integer id, @RequestParam String name) {
-        Category category = categoryRepo.getOne(id);
+        Category category= categoryService.getCategory(id);
         category.setName(name);
         categoryService.saveCategory(category);
         return "redirect:/admin/category";
@@ -68,9 +69,5 @@ public class CategoryController {
 
 
 
-//    @DeleteMapping("/category/delete")
-//    public String deleteCategory(@RequestParam(value="id") Integer id) {
-//        categoryRepo.deleteById(id);
-//        return "redirect:/category";
-//    }
+
 }

@@ -15,8 +15,7 @@ import java.util.Map;
 
 @Controller
 public class LanguageController {
-    @Autowired
-    private LanguageRepo languageRepo;
+
     @Autowired
     private LanguageService languageService;
     @Autowired
@@ -24,29 +23,27 @@ public class LanguageController {
 
     @GetMapping("/admin/language")
     public String getAllLanguage(Model model){
-        model.addAttribute("language",languageRepo.findAll());
+        model.addAttribute("language", languageService.getLanguages());
         return "/admin/language";
     }
     @PostMapping("/admin/language")
     public String addLanguage(@RequestParam String name, Map<String, Object> model) {
         Language language = new Language(name);
-
-        languageRepo.save(language);
+        languageService.saveLanguage(language);
 
         return "redirect:/admin/language";
     }
 
     @GetMapping("/admin/language/delete")
     public String deleteLanguage(@RequestParam(value="id") Integer id){
-
-        languageRepo.deleteById(id);
+        languageService.deleteLanguage(id);
         return "redirect:/admin/language";
     }
 
 
     @GetMapping("/admin/language/edit")
     public String getLanguage(@RequestParam(value="id") Integer id, Model model){
-        Language language = languageRepo.getOne(id);
+        Language language = languageService.getLanguage(id);
         model.addAttribute("language", language);
 
         return "/admin/language";
@@ -55,7 +52,7 @@ public class LanguageController {
 
     @PostMapping("/admin/language/edit")
     public String editLanguagey(@RequestParam (value="id") Integer id, @RequestParam String name) {
-        Language language = languageRepo.getOne(id);
+        Language language = languageService.getLanguage(id);
         language.setName(name);
         languageService.saveLanguage(language);
         return "redirect:/admin/language";

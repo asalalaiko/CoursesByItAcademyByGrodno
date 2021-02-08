@@ -77,8 +77,6 @@ public class AdminOrderController {
         order.setStatePayment(true);
         orderService.saveOrder(order);
 
-//        Payment payment1 = new Payment();
-//        payment1 = paymentService.getPayment();
         payment.setOrder(order);
         paymentService.savePayment(payment);
 
@@ -88,19 +86,6 @@ public class AdminOrderController {
 
 
 
-
-
-//    @GetMapping("/admin/orderPayment")
-//    public String paymentOrder (@RequestParam(value="id") Integer id) {
-//
-//        Order order = new Order();
-//        order = orderService.getOrder(id);
-//        order.setStatePayment(true);
-//        orderService.saveOrder(order);
-//
-//
-//        return "redirect:/admin/orders";
-//    }
 
 
 }

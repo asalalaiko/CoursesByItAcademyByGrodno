@@ -18,12 +18,9 @@ import java.text.SimpleDateFormat;
 @Controller
 public class ProductController {
 
-    @Autowired
-    private ProductRepo productRepo;
+
     @Autowired
     private ProductService productService;
-    @Autowired
-    private PublisherRepo publisherRepo;
     @Autowired
     private PublisherService publisherService;
     @Autowired
@@ -70,8 +67,7 @@ public class ProductController {
     }
     @GetMapping("/admin/product/delete")
     public String deleteProduct(@RequestParam(value="id") Integer id){
-
-        productRepo.deleteById(id);
+        productService.deleteProduct(id);
 
         return "redirect:/admin/product";
     }
@@ -84,8 +80,7 @@ public class ProductController {
         model.addAttribute("frequency", frequencyService.getFrequencies());
         model.addAttribute("language", languageService.getLanguages());
 
-        Product product = productRepo.getOne(productId);
-        model.addAttribute("product", product);
+        model.addAttribute("product", productService.getProduct(productId));
 
         return "/admin/product";
     }
@@ -100,7 +95,7 @@ public class ProductController {
                               Frequency frequency,
                               Language language) throws ParseException {
 
-        Product product = productRepo.getOne(productId);
+        Product product = productService.getProduct(productId);
         product.setName(productName);
         product.setIsin(isin);
 

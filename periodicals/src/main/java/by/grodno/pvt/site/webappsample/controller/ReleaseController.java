@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ReleaseController {
 
-    @Autowired
-    private ReleaseRepo releaseRepo;
+
     @Autowired
     private ReleaseService releaseService;
     @Value("${upload.path}")

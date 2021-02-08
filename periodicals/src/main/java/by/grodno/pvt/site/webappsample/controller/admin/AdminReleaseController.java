@@ -22,8 +22,7 @@ import java.util.UUID;
 @Controller
 public class AdminReleaseController {
 
-    @Autowired
-    private ReleaseRepo releaseRepo;
+
     @Autowired
     private ReleaseService releaseService;
     @Autowired
@@ -73,8 +72,8 @@ public class AdminReleaseController {
 
     @GetMapping("/admin/release/delete")
     public String deleteRelease(@RequestParam(value="id") Integer id){
+        releaseService.deleteRelease(id);
 
-        releaseRepo.deleteById(id);
         return "redirect:/admin/release";
     }
 
@@ -84,7 +83,7 @@ public class AdminReleaseController {
 
         model.addAttribute("product", productService.getProducts());
 
-        Release release = releaseRepo.getOne(releaseId);
+                Release release = releaseService.getRelease(releaseId);
         model.addAttribute("release", release);
 
         return "/admin/release";
@@ -97,7 +96,7 @@ public class AdminReleaseController {
                               @RequestParam String description,
                               @RequestParam Double price,
                               Product product) {
-        Release release = releaseRepo.getOne(releaseId);
+        Release release = releaseService.getRelease(releaseId);
 
         release.setName(releaseName);
         release.setDescription(description);

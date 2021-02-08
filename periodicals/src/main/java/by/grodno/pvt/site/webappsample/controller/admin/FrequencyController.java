@@ -16,8 +16,7 @@ import java.util.Map;
 
 @Controller
 public class FrequencyController {
-    @Autowired
-    private FrequencyRepo frequencyRepo;
+
     @Autowired
     private FrequencyService frequencyService;
     @Autowired
@@ -25,29 +24,27 @@ public class FrequencyController {
 
     @GetMapping("/admin/frequency")
     public String getAllFrequency(Model model){
-        model.addAttribute("frequency",frequencyRepo.findAll());
+        model.addAttribute("frequency", frequencyService.getFrequencies());
         return "/admin/frequency";
     }
     @PostMapping("/admin/frequency")
     public String addFrequency(@RequestParam String name, Map<String, Object> model) {
         Frequency frequency = new Frequency(name);
-
-        frequencyRepo.save(frequency);
+        frequencyService.saveFrequency(frequency);
 
         return "redirect:/admin/frequency";
     }
 
     @GetMapping("/admin/frequency/delete")
     public String deleteFrequency(@RequestParam(value="id") Integer id){
-
-        frequencyRepo.deleteById(id);
+        frequencyService.deleteFrequency(id);
         return "redirect:/admin/frequency";
     }
 
 
     @GetMapping("/admin/frequency/edit")
     public String getFrequency(@RequestParam(value="id") Integer id, Model model){
-        Frequency frequency = frequencyRepo.getOne(id);
+        Frequency frequency = frequencyService.getFrequency(id);
         model.addAttribute("frequency", frequency);
 
         return "/admin/frequency";
@@ -56,7 +53,7 @@ public class FrequencyController {
 
     @PostMapping("/admin/frequency/edit")
     public String editFrequencyy(@RequestParam (value="id") Integer id, @RequestParam String name) {
-        Frequency frequency = frequencyRepo.getOne(id);
+        Frequency frequency = frequencyService.getFrequency(id);
         frequency.setName(name);
         frequencyService.saveFrequency(frequency);
         return "redirect:/admin/frequency";
