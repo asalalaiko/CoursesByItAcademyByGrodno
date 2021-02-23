@@ -12,6 +12,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -28,6 +29,7 @@
   <component name="ProjectId" id="1osT44u1rsYm4tgLFTR7y7zWodu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -39,6 +41,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals_v2\src\main\resources\templates" />
       <recent name="C:\Users\alexei\Desktop\Java\periodicals_v2\src\main\java" />
     </key>
   </component>
@@ -85,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614074103565</updated>
       <workItem from="1614074107855" duration="926000" />
-      <workItem from="1614075237024" duration="788000" />
+      <workItem from="1614075237024" duration="6210000" />
     </task>
     <servers />
   </component>
