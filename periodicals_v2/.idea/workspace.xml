@@ -11,8 +11,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,7 +88,8 @@
       <option name="presentableId" value="Default" />
       <updated>1614074103565</updated>
       <workItem from="1614074107855" duration="926000" />
-      <workItem from="1614075237024" duration="6210000" />
+      <workItem from="1614075237024" duration="7097000" />
+      <workItem from="1614152980880" duration="7312000" />
     </task>
     <servers />
   </component>
@@ -100,7 +101,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

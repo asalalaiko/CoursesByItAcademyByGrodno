@@ -6,37 +6,44 @@ import by.grodno.pvt.site.webappsample.repo.UserRepo;
 import by.grodno.pvt.site.webappsample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
+@Service
+@Transactional
 public class JPAUserService implements UserService {
 
     @Autowired
     private UserRepo userRepo;
     @Autowired
+    private UserService userService;
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
     public List<User> getUsers() {
-        return userRepo.findAll();
+        return userService.getUsers();
     }
 
     @Override
     public User getUser(Integer id) {
-        return userRepo.getOne(id);
+        return userService.getUser(id);
     }
 
     @Override
     public boolean addUser(User user) {
-        User userFromDb = userRepo.findByUsername(user.getUsername());
+        User userFromDb = (User) userService.findByUsername(user.getUsername());
+
 
         if (userFromDb != null) {
             return false;
         }
 
         user.setActive(true);
-        user.setRoles(UserRole.USER);
+        user.setRoles(UserRole.ADMIN);
         user.setActivationCode(UUID.randomUUID().toString());
 
 
@@ -54,7 +61,7 @@ public class JPAUserService implements UserService {
 
     @Override
     public void deleteUser(Integer id) {
-        userRepo.deleteById(id);
+        userService.deleteUser(id);
     }
 
     @Override
