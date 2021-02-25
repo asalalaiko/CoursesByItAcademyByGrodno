@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -42,8 +43,8 @@ public class JPAUserService implements UserService {
             return false;
         }
 
-        user.setActive(true);
-        user.setRoles(UserRole.ADMIN);
+        user.setActive(false);
+        user.setRoles(UserRole.USER);
         user.setActivationCode(UUID.randomUUID().toString());
 
 
@@ -65,7 +66,7 @@ public class JPAUserService implements UserService {
     }
 
     @Override
-    public List<User> findByUsername(String username) {
+    public User findByUsername(String username) {
         return null;
     }
 

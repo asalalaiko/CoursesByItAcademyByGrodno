@@ -6,6 +6,7 @@ import by.grodno.pvt.site.webappsample.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface UserService {
@@ -20,6 +21,6 @@ public interface UserService {
 
     void deleteUser(Integer id);
 
-    List<User> findByUsername(String username);
+    User findByUsername(String username);
 
 }

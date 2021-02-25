@@ -42,15 +42,6 @@ public class User implements UserDetails {
         return null;
     }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
 
     @Override
     public boolean isAccountNonExpired() {
@@ -72,22 +63,14 @@ public class User implements UserDetails {
         return true;
     }
 
-
-    public void setRoles(UserRole user) {
-        this.roles = roles;
+    public String getPassword() {
+        return password;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public String getUsername() {
+        return username;
     }
 
-    public void setActivationCode(String toString) {
-        this.activationCode = activationCode;
-    }
-
-    public void setPassword(String encode) {
-        this.password = password;
-    }
 }
 
 
