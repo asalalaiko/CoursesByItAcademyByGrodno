@@ -67,7 +67,7 @@ public class JPAUserService implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        return null;
+        return userRepo.findByUsername(username);
     }
 
 

@@ -90,7 +90,7 @@
       <workItem from="1614074107855" duration="926000" />
       <workItem from="1614075237024" duration="7097000" />
       <workItem from="1614152980880" duration="7312000" />
-      <workItem from="1614247242317" duration="9245000" />
+      <workItem from="1614247242317" duration="11356000" />
     </task>
     <servers />
   </component>
@@ -109,5 +109,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/UserAuthService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
