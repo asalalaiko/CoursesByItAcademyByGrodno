@@ -38,8 +38,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="by.grodno.pvt.site.webappsample.service.impl" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexei\Desktop\Java\CoursesByItAcademyByGrodno\periodicals_v2\src\main\resources\templates" />
       <recent name="C:\Users\alexei\Desktop\Java\periodicals_v2\src\main\java" />
@@ -90,7 +94,9 @@
       <workItem from="1614074107855" duration="926000" />
       <workItem from="1614075237024" duration="7097000" />
       <workItem from="1614152980880" duration="7312000" />
-      <workItem from="1614247242317" duration="11356000" />
+      <workItem from="1614247242317" duration="15595000" />
+      <workItem from="1614340725195" duration="72000" />
+      <workItem from="1614858848644" duration="9471000" />
     </task>
     <servers />
   </component>
@@ -109,21 +115,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/UserAuthService.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

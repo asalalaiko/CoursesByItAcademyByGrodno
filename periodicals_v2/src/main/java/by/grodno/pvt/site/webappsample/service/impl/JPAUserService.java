@@ -71,4 +71,9 @@ public class JPAUserService implements UserService {
     }
 
 
+    @Override
+    public  User findByIdGoogle(String idGoogle){
+        return  userRepo.findByIdGoogle(idGoogle);
+    }
+
 }

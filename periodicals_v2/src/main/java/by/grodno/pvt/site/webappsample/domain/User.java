@@ -19,10 +19,13 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    private String idGoogle;
+
     @Column(unique = true)
     @Email
-    private String username;
+    private String email;
 
+    private String username;
 
     @NotNull
     @Column(nullable = false)
@@ -33,9 +36,13 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole roles;
 
+    private String userPicture;
+
     private Boolean active = false;
 
+    //add new table
     private String activationCode;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

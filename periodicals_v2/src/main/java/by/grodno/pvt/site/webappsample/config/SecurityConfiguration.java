@@ -1,8 +1,13 @@
 package by.grodno.pvt.site.webappsample.config;
 
 
+import by.grodno.pvt.site.webappsample.domain.User;
+import by.grodno.pvt.site.webappsample.repo.UserRepo;
+import by.grodno.pvt.site.webappsample.service.UserService;
 import by.grodno.pvt.site.webappsample.service.impl.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -16,17 +21,36 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@EnableOAuth2Sso
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
 
     @Autowired
     private UserAuthService userAuthService;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(8);
+    }
+
+    @Bean
+    public PrincipalExtractor principalExtractor(UserRepo userRepo){
+        return map -> {
+            String idGoogle = (String) map.get("sun");
+                if (userRepo.findByIdGoogle(idGoogle)!= null){
+               //User user = userRepo.findByIdGoogle(idGoogle).orElseGet(() -> {
+               User newUser = new User();
+
+               newUser.setIdGoogle(idGoogle);
+               newUser.setEmail((String) map.get("email"));
+               newUser.setUsername((String) map.get("name"));
+               newUser.setUserPicture((String) map.get("picture"));
+
+                return newUser;
+            };
+            return new User();
+        };
     }
 
     @Override

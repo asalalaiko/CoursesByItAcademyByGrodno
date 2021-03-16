@@ -23,4 +23,5 @@ public interface UserService {
 
     User findByUsername(String username);
 
+    User findByIdGoogle(String idGoogle);
 }
