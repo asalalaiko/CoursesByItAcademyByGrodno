@@ -19,8 +19,6 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String idGoogle;
-
     @Column(unique = true)
     @Email
     private String email;

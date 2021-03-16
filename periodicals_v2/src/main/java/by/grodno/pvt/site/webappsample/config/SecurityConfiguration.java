@@ -2,6 +2,7 @@ package by.grodno.pvt.site.webappsample.config;
 
 
 import by.grodno.pvt.site.webappsample.domain.User;
+import by.grodno.pvt.site.webappsample.domain.UserRole;
 import by.grodno.pvt.site.webappsample.repo.UserRepo;
 import by.grodno.pvt.site.webappsample.service.UserService;
 import by.grodno.pvt.site.webappsample.service.impl.UserAuthService;
@@ -37,19 +38,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
     @Bean
     public PrincipalExtractor principalExtractor(UserRepo userRepo){
         return map -> {
-            String idGoogle = (String) map.get("sun");
-                if (userRepo.findByIdGoogle(idGoogle)!= null){
-               //User user = userRepo.findByIdGoogle(idGoogle).orElseGet(() -> {
+            String emailGoogle = (String) map.get("email");
+               User user = userRepo.findByEmail(emailGoogle).orElseGet(() -> {
                User newUser = new User();
 
-               newUser.setIdGoogle(idGoogle);
+
                newUser.setEmail((String) map.get("email"));
+               newUser.setPassword(passwordEncoder.encode((String) map.get("sub")));
                newUser.setUsername((String) map.get("name"));
+               newUser.setRoles(UserRole.USER);
                newUser.setUserPicture((String) map.get("picture"));
 
-                return newUser;
-            };
-            return new User();
+                    return newUser;
+            });
+            return userRepo.save(user);
         };
     }
 

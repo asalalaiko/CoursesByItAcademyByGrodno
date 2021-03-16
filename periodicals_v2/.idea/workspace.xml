@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="725df214-9097-4f1e-a28c-fcef1b86208f" name="Default Changelist" comment="" />
+    <list default="true" id="725df214-9097-4f1e-a28c-fcef1b86208f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/config/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/repo/UserRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/repo/UserRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/grodno/pvt/site/webappsample/service/impl/JPAUserService.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +112,8 @@
       <workItem from="1614247242317" duration="15595000" />
       <workItem from="1614340725195" duration="72000" />
       <workItem from="1614858848644" duration="9471000" />
+      <workItem from="1615911029387" duration="3761000" />
+      <workItem from="1615919839511" duration="3314000" />
     </task>
     <servers />
   </component>
