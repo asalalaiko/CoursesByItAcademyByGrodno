@@ -137,6 +137,10 @@
             <version>2.3.4.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
     </dependencies>
 
 
